@@ -11,7 +11,6 @@ import UIKit
 
 class MenuCell: CustomCell {
     
-    
     let label : UILabel   =  {
         let label  = UILabel ()
         label.text = "Home"
@@ -30,7 +29,6 @@ class MenuCell: CustomCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
     
     override func setUpCell() {
         super.setUpCell()

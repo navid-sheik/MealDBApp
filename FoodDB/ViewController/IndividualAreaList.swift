@@ -11,19 +11,10 @@ import UIKit
 class IndividualAreaList: UIViewController {
     
     var areaFood : String
-    
-    var areaListPreview : [CategoryListIndividual]?{
-        didSet{
-            print("Soemthi")
-            //self.colletionView.reloadData()
-        }
-    }
-        
     let collectionIdentifier : String = "areaIdentifier"
+    var areaListPreview : [CategoryListIndividual]?
     
     let colletionView =  UICollectionView(frame: .zero, collectionViewLayout: IndividualAreaList.createLayout())
-    
-    
     
     init(areaFood : String) {
         self.areaFood = areaFood
@@ -36,15 +27,22 @@ class IndividualAreaList: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setUpNavigation()
         hidesBottomBarWhenPushed  = true
-
         navigationItem.title =  areaFood
         setUpCollectionView()
         fetchData()
-
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.layer.zPosition = -1
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.layer.zPosition = 0
+    }
     
     private func setUpCollectionView (){
         colletionView.backgroundColor =  .white
@@ -61,72 +59,34 @@ class IndividualAreaList: UIViewController {
         
         //Small Items
         let smallItemGeneral  = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1)))
-        
         smallItemGeneral.contentInsets.trailing = inset
-
         
         let generalGroup =  NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/5)), subitems: [smallItemGeneral])
-
         generalGroup.contentInsets.leading = inset
-        
         generalGroup.contentInsets.bottom = inset
         
-        
         //Large Item + 2 small cell side
-        
-        
         let smallItem  = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/2)))
         smallItem.contentInsets.bottom =  inset
         
         let singleItem  = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         
         let singleGroup   =  NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(2/3), heightDimension: .fractionalHeight(1)), subitem: singleItem, count: 1)
-        
         singleGroup.contentInsets.leading =  inset
-        
         singleGroup.contentInsets.trailing =  inset
         singleGroup.contentInsets.bottom =  inset
         
         let smallItemGroup  =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1)), subitems: [smallItem])
         smallItemGroup.contentInsets.trailing =  inset
         
-        
-        
         let largeGroup  = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(3/5)), subitems: [singleGroup, smallItemGroup])
-        
-        
-        //
         
         let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/5)), subitems: [generalGroup, largeGroup])
         
-        
-        
-        
-        
-        
-        
-//        //item
-//        let item  = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-//
-//        //group
-//        let group  =   NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/5)), subitem: item, count: 2)
-//
-//        //sections
-        
-        
         let section =  NSCollectionLayoutSection(group: containerGroup)
-    
-        //return
-
-        return UICollectionViewCompositionalLayout(section: section)
         
+        return UICollectionViewCompositionalLayout(section: section)
     }
-    
-    private func setUpNavigation(){
-        navigationItem.title =  "Something"
-    }
-    
-    
     
     private func fetchData(){
         MealService.shared.getIndividualListArea(with: areaFood) { (result) in
@@ -137,18 +97,16 @@ class IndividualAreaList: UIViewController {
                 DispatchQueue.main.async {
                     self.colletionView.reloadData()
                 }
-          
+                
             case .failure(let error):
                 print("There is an error while fetching area meals  \(error)")
             }
         }
     }
     
-    
 }
 
 extension  IndividualAreaList : UICollectionViewDelegate, UICollectionViewDataSource{
-
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -163,8 +121,6 @@ extension  IndividualAreaList : UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionIdentifier, for: indexPath) as! MealInListCell
-        
-        
         if let areaListPreview  = areaListPreview {
             cell.categoryListView = areaListPreview[indexPath.row]
         }
@@ -179,16 +135,6 @@ extension  IndividualAreaList : UICollectionViewDelegate, UICollectionViewDataSo
         let controller  =  MealViewController(idMeal: mealId)
         present(controller, animated: true, completion: nil)
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.layer.zPosition = -1
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.layer.zPosition = 0
     }
 }
 

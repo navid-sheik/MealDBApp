@@ -11,8 +11,11 @@ import youtube_ios_player_helper
 
 class MealViewController : UIViewController, YTPlayerViewDelegate{
     
+    var idMeal : String
+    var tagsArrrayDisplay  =  [String]()
+    var dict =  [Int : (String? , String?)]()
     
-    
+    //Scrollview
     lazy var mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.isScrollEnabled = true
@@ -23,18 +26,8 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
     let contentView : UIView =  {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         return view
-        
     }()
-    
-    var tagsArrrayDisplay  =  [String]()
-    
-    
-    var idMeal : String
-    
-    var dict =  [Int : (String? , String?)]()
- 
     
     let titleMeal : UILabel =  {
         let label =  UILabel ()
@@ -42,7 +35,6 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         label.text  = "Meal Title"
         label.textAlignment =  .left
         label.textColor = .black
-        //label.backgroundColor = .blue
         return label
     }()
     
@@ -61,26 +53,20 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         return player
     }()
     
-    
     let instructionsLabel :  UILabel =  {
         let label =  UILabel ()
         label.font = UIFont.systemFont(ofSize: 14)
         label.text  = "Meal Title"
         label.textAlignment =  .left
         label.textColor = .black
-        //label.backgroundColor = .red
         label.numberOfLines =  0
         label.textAlignment =  .natural
         label.sizeToFit()
-        
         return label
     }()
     
-    
     let tagLabel  : UILabel = {
         let label = UILabel ()
-        
-  
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text  = "Meal Title"
         label.textAlignment =  .left
@@ -89,18 +75,14 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         return label
     }()
     
-    
-   
     let tagStackView : UIStackView =  {
         let stackview =  UIStackView()
-        //stackview.backgroundColor = .yellow
         stackview.axis =  .horizontal
         stackview.distribution = .equalSpacing
         stackview.alignment = .center
         stackview.spacing =  20
         return stackview
     }()
-    
     
     let measurementsAndIngridientsSV : UIStackView =  {
         let stackview =  UIStackView()
@@ -115,12 +97,9 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
     
     lazy var tagsScrollView: UIScrollView = {
         let scrollView = UIScrollView()
-   
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
-    
-    
     
     init(idMeal  : String) {
         self.idMeal =  idMeal
@@ -132,28 +111,105 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor =  .white
+        setUpNavigationBar()
+        setUpLayout()
+    }
+    
+    private func setUpNavigationBar(){
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.title = "Meal"
+    }
+    
+    private func setUpLayout (){
+        view.addSubview(mainScrollView)
+        mainScrollView.addSubview(contentView)
+        mainScrollView.translatesAutoresizingMaskIntoConstraints = false
+        mainScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mainScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mainScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        mainScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: mainScrollView.trailingAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: mainScrollView.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor).isActive = true
+        
+        contentView.addSubview(titleMeal)
+        titleMeal.anchor(top: contentView.topAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: 50)
+        
+        contentView.addSubview(mealImageView)
+        mealImageView.anchor(top: titleMeal.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: nil, width: nil, height: 250)
+        
+        contentView.addSubview(instructionsLabel)
+        instructionsLabel.anchor(top: mealImageView.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
+        
+        contentView.addSubview(tagsScrollView)
+        tagsScrollView.anchor(top: instructionsLabel.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: 5, paddingBottom: nil, width: nil, height: 50)
+        
+        tagsScrollView.addSubview(tagStackView)
+        tagStackView.translatesAutoresizingMaskIntoConstraints = false
+        tagStackView.topAnchor.constraint(equalTo: tagsScrollView.topAnchor).isActive = true
+        tagStackView.leadingAnchor.constraint(equalTo: tagsScrollView.leadingAnchor).isActive = true
+        tagStackView.trailingAnchor.constraint(equalTo: tagsScrollView.trailingAnchor).isActive = true
+        tagStackView.heightAnchor.constraint(equalTo: tagsScrollView.heightAnchor).isActive = true
+        
+        contentView.addSubview(measurementsAndIngridientsSV)
+        //key of scrollview for scrolling
+        measurementsAndIngridientsSV.anchor(top: tagsScrollView.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
+        
+        contentView.addSubview(player)
+        player.delegate  = self
+        player.anchor(top: measurementsAndIngridientsSV.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: contentView.bottomAnchor, paddingTop: 30, paddingLeft: 5, paddingRight: -5, paddingBottom: -200, width: nil, height: 200)
+        player.load(withVideoId: "3lxUIeKDgic", playerVars: ["playsinline" : 1])
+    }
+    
+    func populateTagsStackView(){
+        for nValue in 0...tagsArrrayDisplay.count - 1 {
+            let label: UILabel = UILabel()
+            
+            label.text = tagsArrrayDisplay[nValue]
+            label.textColor = .white
+            label.backgroundColor = .black
+            label.font =  UIFont.boldSystemFont(ofSize: 16)
+            tagStackView.addArrangedSubview(label)
+        }
+    }
+    
+    
+    func populateMeasurementsStackView(){
+        for nValue in 1...dict.count {
+            if let valueString  =  dict[nValue]?.0 {
+                if valueString != ""{
+                    let label: UILabel = UILabel()
+                    label.textColor = .black
+                    label.text = "\u{2022} \(dict[nValue]!.0!) - \(dict[nValue]!.1!)"
+                    measurementsAndIngridientsSV.addArrangedSubview(label)
+                }
+            }
+        }
+    }
     
     private func fetchMealDetails(){
         let urlString  = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(idMeal)"
         MealService.shared.getIndividualMeals(with: urlString) { (result) in
             switch result{
-            
             case .success(let meals):
                 DispatchQueue.main.async {
                     self.titleMeal.text =  meals[0].strMeal
                     self.mealImageView.loadImageUrlString(urlString: meals[0].strMealThumb!)
                     self.instructionsLabel.text =  meals[0].strInstructions
-                    //populateMeasurementsStackView(meal: meals[0])
                     self.populateDictonary(meal: meals[0])
                     self.populateMeasurementsStackView()
                     self.organizeTags(meal: meals[0])
                     self.populateTagsStackView()
                     if  let stringYoutuber  = meals[0].strYoutube?.youtubeID{
                         self.player.load(withVideoId: stringYoutuber, playerVars: ["playsinline" : 1])
-                        
                     }
-
-                    
                 }
             case .failure(let error):
                 print("Error\(error)")
@@ -161,26 +217,19 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         }
     }
     
-    
-    
     private func organizeTags(meal : Meal){
         var tagToUse =  [String]()
         if let stringTags = meal.strTags{
             tagToUse = stringTags.components(separatedBy: ",")
             tagsArrrayDisplay.append(contentsOf: tagToUse)
-            
         }
         if  let category =  meal.strCategory{
             tagsArrrayDisplay.append(category)
-            
         }
-   
         if let  area = meal.strArea{
             tagsArrrayDisplay.append(area)
         }
-
     }
-    
     
     private func createLabel (name : String, bgcolor : UIColor) -> UILabel{
         let label  = UILabel()
@@ -189,7 +238,6 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         label.backgroundColor  =  bgcolor
         label.font  = UIFont.boldSystemFont(ofSize: 14)
         label.textAlignment =  .center
-        
         return label
     }
     
@@ -215,127 +263,5 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         dict[19] =  (meal.strIngredient19, meal.strMeasure19)
         dict[20] =  (meal.strIngredient20, meal.strMeasure20)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor =  .white
-        setUpNavigationBar()
-        setUpLayout()
-    }
-    
-    private func setUpNavigationBar(){
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationItem.title = "Meal"
-    }
-    
-    
-    
- 
-    
-    private func setUpLayout (){
-        view.addSubview(mainScrollView)
-        
-        
-        //make sure look bottom paddding of the last element
-        mainScrollView.addSubview(contentView)
-        mainScrollView.translatesAutoresizingMaskIntoConstraints = false
-        mainScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        mainScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        mainScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        mainScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: mainScrollView.trailingAnchor).isActive = true
-        contentView.topAnchor.constraint(equalTo: mainScrollView.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor).isActive = true
-        
-        
-        
-        contentView.addSubview(titleMeal)
-        titleMeal.anchor(top: contentView.topAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: 50)
-        contentView.addSubview(mealImageView)
-        mealImageView.anchor(top: titleMeal.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: nil, width: nil, height: 250)
-        contentView.addSubview(instructionsLabel)
-        instructionsLabel.anchor(top: mealImageView.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
-        contentView.addSubview(tagsScrollView)
-        tagsScrollView.anchor(top: instructionsLabel.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: 5, paddingBottom: nil, width: nil, height: 50)
-        
-        tagsScrollView.addSubview(tagStackView)
-        //view.addSubview(tagStackView)
-       
-        tagStackView.translatesAutoresizingMaskIntoConstraints = false
-        tagStackView.topAnchor.constraint(equalTo: tagsScrollView.topAnchor).isActive = true
-        tagStackView.leadingAnchor.constraint(equalTo: tagsScrollView.leadingAnchor).isActive = true
-        tagStackView.trailingAnchor.constraint(equalTo: tagsScrollView.trailingAnchor).isActive = true
-        tagStackView.heightAnchor.constraint(equalTo: tagsScrollView.heightAnchor).isActive = true
-        
-        contentView.addSubview(measurementsAndIngridientsSV)
-        //key of scrollview for scrolling
-        measurementsAndIngridientsSV.anchor(top: tagsScrollView.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
-        
-        
-        //populateMeasurementsStackView()
-       
-        contentView.addSubview(player)
-        player.delegate  = self
-        player.anchor(top: measurementsAndIngridientsSV.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: contentView.bottomAnchor, paddingTop: 30, paddingLeft: 5, paddingRight: -5, paddingBottom: -200, width: nil, height: 200)
-        player.load(withVideoId: "3lxUIeKDgic", playerVars: ["playsinline" : 1])
-     
-        
-      
-    }
-    
-    func addNewVie(){
-     
-        
-    }
-    
-    
-    
-    
-    
-    
-    func populateTagsStackView(){
-        for nValue in 0...tagsArrrayDisplay.count - 1 {
-                let label: UILabel = UILabel()
-            
- 
-                label.text = tagsArrrayDisplay[nValue]
-                label.textColor = .white
-                label.backgroundColor = .black
-                label.font =  UIFont.boldSystemFont(ofSize: 16)
-                tagStackView.addArrangedSubview(label)
-        }
-    }
-    
-    
-    func populateMeasurementsStackView(){
-        for nValue in 1...dict.count {
-         
-            if let valueString  =  dict[nValue]?.0 {
-                
-                if valueString != ""{
-                    let label: UILabel = UILabel()
-                    label.textColor = .black
-                    //label.backgroundColor = .red
-                    
-                    
-                    label.text = "\u{2022} \(dict[nValue]!.0!) - \(dict[nValue]!.1!)"
-                    measurementsAndIngridientsSV.addArrangedSubview(label)
-                    
-                }
-                   
-            }
-                
-         
-       
-                
-        }
-    }
-    
-    
-    
     
 }

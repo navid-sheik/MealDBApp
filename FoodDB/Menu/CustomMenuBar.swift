@@ -14,7 +14,6 @@ class CustomMenuBar  : UIView {
     let buttonBarItem  : UIButton =  {
         let button =  UIButton ()
         button.setImage(UIImage(named: "hamburger"), for: .normal)
-        //button.backgroundColor =  .darkGray
         return button
     }()
     
@@ -22,8 +21,6 @@ class CustomMenuBar  : UIView {
         let imageView  = UIImageView()
         imageView.image =  UIImage(named: "logo2")
         imageView.contentMode  = .scaleToFill
-        //imageView.backgroundColor = .blue
-        
         return imageView
         
     }()

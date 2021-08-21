@@ -8,15 +8,12 @@
 import Foundation
 import UIKit
 
-
-
 struct ListIngredients: Decodable{
     var meals : [Ingredient]?
 }
+
 struct  Ingredient: Decodable {
     var idIngredient: String?
     var strIngredient: String?
-
     var strDescription: String?
-    
 }

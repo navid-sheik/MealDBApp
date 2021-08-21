@@ -14,11 +14,11 @@ class LetterCell: CustomCell {
     
     override var isSelected: Bool {
         didSet {
-
             self.layer.borderWidth = isSelected ? 2.0 : 0
             self.layer.borderColor =  isSelected ?  UIColor.gray.cgColor :  UIColor.clear.cgColor
         }
     }
+    
     
     let label  : UILabel =  {
         let label  = UILabel()
@@ -32,7 +32,6 @@ class LetterCell: CustomCell {
     override func setUpCell() {
         addSubview(label)
         label.anchor(top: topAnchor, left: leadingAnchor, right: trailingAnchor, bottom: bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
-        
     }
-
+    
 }

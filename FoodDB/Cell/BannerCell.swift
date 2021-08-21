@@ -30,7 +30,6 @@ class BannerCell : CustomCell{
         }
     }
     
-    
     let mainImage : CustomImageView =  {
         let imageView =  CustomImageView()
         imageView.contentMode =  .scaleAspectFill

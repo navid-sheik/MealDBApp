@@ -8,9 +8,6 @@
 import Foundation
 import UIKit
 
-
-
-
 class CategoryCell :  CustomCell {
     
     var individualCategory : Category? {
@@ -23,7 +20,6 @@ class CategoryCell :  CustomCell {
                 return
             }
             categoryImageView.loadImageUrlString(urlString: urlThumbnail)
-            
         }
     }
     

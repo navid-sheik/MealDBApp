@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-
-
-
-
 struct FoodCategoryList:  Decodable {
     var categories :  [Category]?
 }

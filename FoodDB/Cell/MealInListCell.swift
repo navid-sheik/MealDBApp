@@ -26,8 +26,6 @@ class MealInListCell: CustomCell {
         return imageView
     }()
     
-
-    
     override func setUpCell() {
         addSubview(categoryImageView)
         categoryImageView.anchor(top: topAnchor, left: leadingAnchor, right: trailingAnchor, bottom: bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)

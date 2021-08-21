@@ -11,10 +11,8 @@ import UIKit
 class SingleIngredientController : UIViewController{
     
     var ingredientName: String
-
-
     var identifierPreviewIngridient : String =  "identifierPreviewIngridientCell"
-    
+    var listMealsByIngredientsPreview : [CategoryListIndividual]?
     var ingredient : Ingredient?{
         didSet{
             guard let ingridient  =  ingredient else {
@@ -25,54 +23,35 @@ class SingleIngredientController : UIViewController{
                 return
             }
             descriptionINgridient.text =  ingredientDescription
-            
         }
-        
     }
     
-    
-    var listMealsByIngredientsPreview : [CategoryListIndividual]?
-    
-    var titleIngredient : UILabel   = {
+    var titleIngredient : UILabel = {
         let label = UILabel ()
         label.text = "tag"
         label.sizeToFit()
         label.font =  UIFont.boldSystemFont(ofSize: 30)
         label.textAlignment = .center
         label.textColor = .black
-        //label.backgroundColor =  .yellow
-        
-        
-        
         return label
-        
     }()
     
     var imageIngredient :  UIImageView =  {
         let imageView  =  UIImageView()
         imageView.contentMode  = .scaleAspectFill
         imageView.clipsToBounds = true
-        
         return imageView
     }()
     
-    
-    
-    
     let descriptionScrollView :  UIScrollView =  {
         let sv =  UIScrollView()
-        
-    
         return sv
     }()
-    
     
     let contentView : UIView =  {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         return view
-        
     }()
     
     var descriptionINgridient: UILabel = {
@@ -86,9 +65,21 @@ class SingleIngredientController : UIViewController{
         return label
     }()
     
-    
-    
     let colletionView =  UICollectionView(frame: .zero, collectionViewLayout: SingleIngredientController.createLayout())
+    
+    static func createLayout ()-> UICollectionViewCompositionalLayout{
+        //item
+        let item =  NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+        
+        //group
+        let group  = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/5
+        )), subitem: item, count: 2)
+        
+        //section
+        let section =  NSCollectionLayoutSection(group: group)
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+    
     
     
     init(ingredientName : String) {
@@ -100,38 +91,30 @@ class SingleIngredientController : UIViewController{
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  .white
         navigationController?.navigationBar.isHidden = true
-        
         setUpViews()
         setUpCollectionView()
         fetchData()
         
     }
     
-    
-    
-    
     private func setUpViews(){
         view.addSubview(titleIngredient)
         view.addSubview(descriptionScrollView)
-        //view.addSubview(descriptionINgridient)
         view.addSubview(colletionView)
+        
         titleIngredient.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
         
-        
-        //make sure look bottom paddding of the last element
         descriptionScrollView.addSubview(contentView)
         descriptionScrollView.translatesAutoresizingMaskIntoConstraints = false
         descriptionScrollView.topAnchor.constraint(equalTo: titleIngredient.bottomAnchor, constant: 5).isActive = true
         descriptionScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         descriptionScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         descriptionScrollView.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.leadingAnchor.constraint(equalTo: descriptionScrollView.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: descriptionScrollView.trailingAnchor).isActive = true
@@ -139,20 +122,11 @@ class SingleIngredientController : UIViewController{
         contentView.bottomAnchor.constraint(equalTo: descriptionScrollView.bottomAnchor).isActive = true
         contentView.widthAnchor.constraint(equalTo: descriptionScrollView.widthAnchor).isActive = true
         
-        
-        
         contentView.addSubview(descriptionINgridient)
-        
-    
-//
-//        descriptionScrollView.backgroundColor = .brown
-//
-//        descriptionINgridient.backgroundColor = .blue
         descriptionINgridient.anchor(top: descriptionScrollView.topAnchor, left: descriptionScrollView.leadingAnchor, right: descriptionScrollView.trailingAnchor, bottom: descriptionScrollView.bottomAnchor, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: -20, width: nil, height: nil)
         descriptionINgridient.widthAnchor.constraint(equalTo: descriptionScrollView.widthAnchor).isActive = true
         
         colletionView.anchor(top: descriptionScrollView.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
-        
     }
     
     
@@ -162,31 +136,6 @@ class SingleIngredientController : UIViewController{
         colletionView.dataSource = self
         colletionView.register(MealInListCell.self, forCellWithReuseIdentifier: identifierPreviewIngridient)
     }
-    
-  
-    static func createLayout ()-> UICollectionViewCompositionalLayout{
-        //item
-        
-        let item =  NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-        
-        
-        //group
-        
-        let group  = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/5
-        )), subitem: item, count: 2)
-        
-        //section
-        
-        let section =  NSCollectionLayoutSection(group: group)
-        
-        // return
-        
-        return UICollectionViewCompositionalLayout(section: section)
-        
-        
-        
-    }
-    
     
     private func fetchData(){
         //remove space between two words because of the api call
@@ -198,14 +147,11 @@ class SingleIngredientController : UIViewController{
                     ingredientToPass += fullIngredientArray[index]
                 }else{
                     ingredientToPass += fullIngredientArray[index] + "_"
-                    
                 }
             }
         }else{
             ingredientToPass =  fullIngredientArray[0]
         }
-        
-        
         MealService.shared.getIndividualListIngredient(with: ingredientToPass) { (result) in
             switch result{
             
@@ -214,22 +160,20 @@ class SingleIngredientController : UIViewController{
                 DispatchQueue.main.async {
                     self.colletionView.reloadData()
                 }
-          
             case .failure(let error):
                 print("There is an error while fetching area meals  \(error)")
             }
         }
     }
-    
-    
 }
 
 extension SingleIngredientController :  UICollectionViewDataSource, UICollectionViewDelegate{
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         if let mealListIngridientPreiews  =  listMealsByIngredientsPreview {
             return mealListIngridientPreiews.count
         }
@@ -242,7 +186,6 @@ extension SingleIngredientController :  UICollectionViewDataSource, UICollection
             if let imageUrl =  mealListIngridientPreiews[indexPath.row].strMealThumb {
                 cell.categoryImageView.loadImageUrlString(urlString: imageUrl)
             }
-           
         }
         return cell
     }
@@ -261,7 +204,7 @@ extension SingleIngredientController :  UICollectionViewDataSource, UICollection
         //tabBarController?.tabBar.isHidden = true
         self.tabBarController?.tabBar.layer.zPosition = -1
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //tabBarController?.tabBar.isHidden = false

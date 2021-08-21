@@ -24,10 +24,7 @@ class FeaturedTextCell : CustomCell{
         //stylingCell()
         contentView.addSubview(tagName)
         tagName.anchor(top: topAnchor, left: leadingAnchor, right: trailingAnchor, bottom: bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
-        
-        
     }
-    
     
     private func stylingCell(){
         self.contentView.layer.borderWidth =  1.0
@@ -39,7 +36,6 @@ class FeaturedTextCell : CustomCell{
         self.layer.shadowOpacity =  0.5
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
-        
     }
     
 }

@@ -12,7 +12,6 @@ import UIKit
 let imageCache  =  NSCache<NSString, UIImage>()
 class CustomImageView: UIImageView {
     
-    
     var imageUrlString: String?
     
     func loadImageUrlString( urlString: String){
@@ -28,19 +27,15 @@ class CustomImageView: UIImageView {
             guard let data = data, error == nil else {
                 return
             }
-            
             DispatchQueue.main.async {
                 let imageToCache   = UIImage(data: data)
                 if self.imageUrlString == urlString{
                     self.image =  imageToCache
                 }
                 imageCache.setObject(imageToCache!, forKey: urlString as NSString)
-                
             }
             
         }.resume()
-        
-        
     }
     
 }

@@ -13,7 +13,6 @@ struct AllCategoryList: Decodable {
     var meals : [CategoryListIndividual]?
 }
 
-
 struct CategoryListIndividual: Decodable{
     var strMeal : String?
     var strMealThumb: String?

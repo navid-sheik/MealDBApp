@@ -12,7 +12,7 @@ import UIKit
 enum Settings : Int, CustomStringConvertible, CaseIterable {
     var imageSetting :  String{
         switch self {
-
+        
         case .Home:
             return "house"
         case .Liked:
@@ -47,6 +47,5 @@ enum Settings : Int, CustomStringConvertible, CaseIterable {
     case Settings
     case Help
     case About
-    
     
 }
