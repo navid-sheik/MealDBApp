@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 
+
+
 class CategoryCell :  CustomCell {
     
     var individualCategory : Category? {
@@ -17,15 +19,20 @@ class CategoryCell :  CustomCell {
                 return
             }
             categoryLabel.text =  category.category
+            guard let urlThumbnail = category.thumbnail else {
+                return
+            }
+            categoryImageView.loadImageUrlString(urlString: urlThumbnail)
             
         }
     }
     
-    let categoryImageView : UIImageView =  {
-        let imageView =  UIImageView()
-        imageView.contentMode =  .scaleAspectFill
+    let categoryImageView : CustomImageView =  {
+        let imageView =  CustomImageView()
+        imageView.contentMode =  .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.image =  UIImage(named: "placeholder")
+        imageView.backgroundColor =  .init(white: 0.9, alpha: 0.5)
         return imageView
     }()
     
@@ -46,8 +53,5 @@ class CategoryCell :  CustomCell {
         addSubview(categoryLabel)
         categoryLabel.anchor(top: categoryImageView.bottomAnchor, left: leadingAnchor, right: trailingAnchor, bottom: bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
     }
-    
-    
-    
     
 }

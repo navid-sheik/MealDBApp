@@ -36,6 +36,7 @@ class CategoryController : UIViewController {
     private func setNavigationController (){
         navigationItem.title =  "Category"
         navigationController?.navigationBar.prefersLargeTitles = true
+       
     }
     
     
@@ -54,6 +55,7 @@ class CategoryController : UIViewController {
             case .success(let categoryColletions):
                 self.categories =  categoryColletions
                 DispatchQueue.main.async {
+                    
                     self.collectionView.reloadData()
                 }
             
@@ -65,7 +67,7 @@ class CategoryController : UIViewController {
 
         
     }
-
+   
 
 }
 
@@ -80,25 +82,36 @@ extension CategoryController :  UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CategoryCell
         cell.individualCategory =  categories[indexPath.row]
-        cell.backgroundColor =  .blue
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width - 3) / 2 , height: (collectionView.frame.width - 1) / 2)
+        return CGSize(width: (collectionView.frame.width - 46) / 2 , height: (collectionView.frame.width - 16) / 2)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 1, bottom: 10, right: 1)
+        return UIEdgeInsets(top: 0, left: 15, bottom: 10, right: 15)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 15
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 15
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let categoryNameToPass  =  categories[indexPath.row].category else {
+            return
+        }
+        
+        let controller =  CategoryList(categoryName: categoryNameToPass)
+        controller.category = categories[indexPath.row]
+        controller.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(controller, animated: true)
+        
+        
     }
     
     

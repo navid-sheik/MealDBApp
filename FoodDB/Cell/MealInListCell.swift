@@ -9,8 +9,17 @@ import Foundation
 import UIKit
 
 class MealInListCell: CustomCell {
-    let categoryImageView : UIImageView =  {
-        let imageView =  UIImageView()
+    
+    var categoryListView:  CategoryListIndividual? {
+        didSet{
+            guard let thumNailUrl = categoryListView?.strMealThumb else {
+                return
+            }
+            categoryImageView.loadImageUrlString(urlString: thumNailUrl)
+        }
+    }
+    let categoryImageView : CustomImageView =  {
+        let imageView =  CustomImageView()
         imageView.contentMode =  .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.image =  UIImage(named: "placeholder")

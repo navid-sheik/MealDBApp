@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CardSlider
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,8 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window  = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene  =  windowScene
-        let vc = CategoryController()
-        window?.rootViewController = UINavigationController(rootViewController: vc)
+        let layout  = UICollectionViewFlowLayout()
+     
+        let vc = ContainerController()
+        //window?.rootViewController = UINavigationController(rootViewController: vc)
+        window?.rootViewController = vc
+        
         
         window?.makeKeyAndVisible()
     }
