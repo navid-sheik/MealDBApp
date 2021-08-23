@@ -40,6 +40,7 @@ class ContainerController : UIViewController{
         if menuController == nil{
             menuController =  MenuController()
             menuController.delegate = self
+            //view.insertSubview(menuController.view, aboveSubview: centerController.view)
             view.insertSubview(menuController.view, at: 0)
             addChild(menuController)
             menuController.didMove(toParent: self)
@@ -50,8 +51,9 @@ class ContainerController : UIViewController{
     private func animateMenu (shouldExpand: Bool, settingOption : Settings?){
         if shouldExpand{
             //Show menu
-            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
                 self.centerController.view.frame.origin.x =  self.centerController.view.frame.width - 56
+                //self.menuController.view.frame.size.width = self.centerController.view.frame.width - 56
                 self.centerController.view.alpha =  0.5
             }, completion :nil)
             
@@ -60,6 +62,7 @@ class ContainerController : UIViewController{
             //Hide menu
             UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn) {
                 self.centerController.view.frame.origin.x =  0
+                //self.menuController.view.frame.size.width  = 0
                 self.centerController.view.alpha =  1
             } completion: { (_) in
                 guard let setting =  settingOption else {

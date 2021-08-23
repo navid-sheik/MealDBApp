@@ -30,6 +30,13 @@ class MenuCell: CustomCell {
         return imageView
     }()
     
+    
+    let barDividier : UIView =  {
+        let view  = UIView()
+        view.backgroundColor =  .white
+        return view
+    }()
+    
     override func setUpCell() {
         super.setUpCell()
         addSubview(iconMenu)
@@ -42,5 +49,7 @@ class MenuCell: CustomCell {
         label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5).isActive = true
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        addSubview(barDividier)
+        barDividier.anchor(top: nil, left: leadingAnchor, right: trailingAnchor, bottom: bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: 2)
     }
 }

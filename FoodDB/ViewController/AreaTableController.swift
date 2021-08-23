@@ -34,8 +34,8 @@ class AreaTableController : UITableViewController{
     
     
     private func fetchData(){
-        let areaString =  "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
-        MealService.shared.getAllArea(with: areaString) { (result) in
+        //let areaString =  "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
+        MealService.shared.getAllArea() { (result) in
             switch result{
             
             case .success(let areaList):

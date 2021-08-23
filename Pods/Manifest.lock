@@ -1,0 +1,24 @@
+PODS:
+  - CardSlider (0.1.0)
+  - TTGTagCollectionView (2.0.1)
+  - youtube-ios-player-helper (1.0.3)
+
+DEPENDENCIES:
+  - CardSlider
+  - TTGTagCollectionView
+  - youtube-ios-player-helper
+
+SPEC REPOS:
+  trunk:
+    - CardSlider
+    - TTGTagCollectionView
+    - youtube-ios-player-helper
+
+SPEC CHECKSUMS:
+  CardSlider: 0a8f5f17f5a76701771794b07fdaeddc512358c8
+  TTGTagCollectionView: 29d01ece199c257943ba490e9989734382cda5ae
+  youtube-ios-player-helper: 0185c57db23c80d63d6ca11251d110abb8a4ca61
+
+PODFILE CHECKSUM: 4e4366c24616c4dc5bbfc3d3acd488f8c481d1f1
+
+COCOAPODS: 1.10.1

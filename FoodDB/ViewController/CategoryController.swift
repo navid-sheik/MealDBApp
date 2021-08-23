@@ -42,8 +42,8 @@ class CategoryController : UIViewController {
     }
     
     private func fetchData(){
-        let categoryUrl = "https://www.themealdb.com/api/json/v1/1/categories.php"
-        let results  =  MealService.shared.getAllCategories(with: categoryUrl) { (result) in
+        //let categoryUrl = "https://www.themealdb.com/api/json/v1/1/categories.php"
+        let results  =  MealService.shared.getAllCategories() { (result) in
             switch result{
             case .success(let categoryColletions):
                 self.categories =  categoryColletions

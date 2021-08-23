@@ -56,7 +56,7 @@ class MainCardSlider: UIViewController, CardSliderDataSource{
         for i in 0...20{
             let url =  "https://www.themealdb.com/api/json/v1/1/random.php"
             dispatchGroup.enter()
-            MealService.shared.getIndividualMeals(with: url) { (result) in
+            MealService.shared.getIndividualRandomMeals() { (result) in
                 switch(result){
                 
                 case .success(let meals):

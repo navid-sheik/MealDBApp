@@ -30,13 +30,18 @@ class MainController : UIViewController{
     var featuredMealIdentifierCell =  "featuredMealIdentifierCell"
     
     
+    
+    var latestMeals  =  [Meal]()
+    var latestMealIdentifierCell =  "latestMealIdentifierCell"
+    
+    
     //For Headers in collectionsViews
     static let categoryHeaderId =  "categoryHeaderId"
     static let featuredHeaderId =  "featuredHeaderId"
     private let headerId  =  "headerId"
     private let featureId   =  "featureId"
     
-    private var timer =  Timer()
+    private var timer : Timer?
     private var counter  = 0
     
     
@@ -90,7 +95,7 @@ class MainController : UIViewController{
                 let item =  NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 item.contentInsets.trailing = 16
                 
-                let group  = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(170)), subitems: [item])
+                let group  = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)), subitems: [item])
                 group.contentInsets.trailing =  16
                 
                 let section  = NSCollectionLayoutSection(group: group)
@@ -117,7 +122,7 @@ class MainController : UIViewController{
                 return section
             }
             
-            else {
+            else if sectionNumber  == 4{
                 
                 let  item =  NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.50), heightDimension: .fractionalWidth(0.50)))
                 item.contentInsets.trailing = 16
@@ -130,6 +135,23 @@ class MainController : UIViewController{
                 section.contentInsets.leading =  16
                 section.boundarySupplementaryItems =  [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: MainController.categoryHeaderId, alignment: .topLeading)]
                 return section
+            }else {
+                
+                let item =  NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                item.contentInsets.trailing = 16
+                
+                let group  = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)), subitems: [item])
+                group.contentInsets.trailing =  16
+                
+                let section  = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior =  .paging
+                
+                section.contentInsets.leading = 16
+                section.boundarySupplementaryItems =  [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: MainController.categoryHeaderId, alignment: .topLeading)]
+                
+                section.contentInsets.bottom = 25
+                return section
+                
             }
         }
     }
@@ -142,11 +164,41 @@ class MainController : UIViewController{
         fetchFeaturedTags()
         featchFeatureArea()
         fetchFeaturedCategories()
-        feathThreeRandomMeals()
+        //feathThreeRandomMeals()
+        fetchFeatured10Meals()
+        fetchLatestMeals()
         DispatchQueue.main.async {
-            self.timer =  Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            self.timer =  Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+        }
+     
+    }
+    
+    
+    func startTimer()
+    {
+      if timer == nil {
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+      }
+    }
+
+    func stopTimer()
+    {
+      if timer != nil {
+        timer!.invalidate()
+        timer = nil
+      }
+    }
+ 
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let  offset =  targetContentOffset.pointee.y
+        if offset < 200{
+            startTimer()
+        }else {
+            stopTimer()
         }
     }
+  
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -179,6 +231,7 @@ class MainController : UIViewController{
         collectionView.register(FeaturedTextCell.self, forCellWithReuseIdentifier: featuredAreaCellIdentifier)
         collectionView.register(BannerCell.self, forCellWithReuseIdentifier: featuredCategoryIdentifierCell)
         collectionView.register(BannerCell.self, forCellWithReuseIdentifier: featuredMealIdentifierCell)
+        collectionView.register(BannerCell.self, forCellWithReuseIdentifier: latestMealIdentifierCell)
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
@@ -194,7 +247,7 @@ class MainController : UIViewController{
     @objc func changeImage(){
         if counter < bannerImagesNames.count{
             let index = IndexPath.init(item: counter, section: 0)
-            self.collectionView.scrollToItem(at: index, at: .right, animated: true)
+            self.collectionView.scrollToItem(at: index, at: [.centeredVertically, .centeredHorizontally], animated: true)
             counter += 1
         }else{
             counter = 0
@@ -209,7 +262,7 @@ class MainController : UIViewController{
 extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -225,7 +278,10 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
             return featuredAreas.count
         }
         else if section == 4{
-            return featuredCategories.count
+            //return featuredCategories.count
+            return 4
+        }else if section == 5{
+            return latestMeals.count
         }
         return 8
     }
@@ -261,6 +317,10 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
             cell.typeBanner  = .category
             cell.mainImage.loadImageUrlString(urlString: featuredCategories[indexPath.row].thumbnail!)
             return cell
+        }else if indexPath.section == 5{
+            let cell  =  collectionView.dequeueReusableCell(withReuseIdentifier: latestMealIdentifierCell, for: indexPath) as! BannerCell
+            cell.mainImage.loadImageUrlString(urlString: latestMeals[indexPath.row].strMealThumb!)
+            return cell
         }
         
         let cell  =  collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifierMain, for: indexPath)
@@ -273,6 +333,10 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
         if indexPath.section == 2{
             let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! Header
             header.label.text  =   "Featured Meal"
+            return header
+        }else if indexPath.section == 5{
+            let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! Header
+            header.label.text  =   "Latest Meal"
             return header
         }
         
@@ -319,6 +383,13 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
             controller.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(controller, animated: true)
             
+        }else if indexPath.section == 5{
+            guard let mealId =  latestMeals[indexPath.row].idMeal else {
+                return
+            }
+            let controller  =  MealViewController(idMeal: mealId)
+            present(controller, animated: true, completion: nil)
+
         }
     }
     
@@ -326,8 +397,8 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
     //FETCHING DATA
     
     private func fetchFeaturedTags(){
-        let stringUrl  = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
-        MealService.shared.getAllIngridient(with: stringUrl) { (result) in
+        //let stringUrl  = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
+        MealService.shared.getAllIngridient() { (result) in
             switch result{
             
             case .success(let ingriendients):
@@ -357,36 +428,66 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
     
     
     private func feathThreeRandomMeals(){
-        let dispatchGroup =  DispatchGroup()
-        for _ in  1...3{
-            dispatchGroup.enter()
-            let randomMealUrl  = "https://www.themealdb.com/api/json/v1/1/random.php"
-            MealService.shared.getIndividualMeals(with: randomMealUrl) { (result) in
-                switch result{
-                
-                case .success(let meals):
-                    self.featuredRandomMeals.append(meals[0])
-                    
-                    dispatchGroup.leave()
-                case .failure(let error):
-                    print("The errror is \(error.localizedDescription)")
-                }
-            }
+      
+        
+//        let dispatchGroup =  DispatchGroup()
+//        for _ in  1...3{
+//            dispatchGroup.enter()
+//
+//            MealService.shared.getIndividualRandomMeals() { (result) in
+//                switch result{
+//
+//                case .success(let meals):
+//                    self.featuredRandomMeals.append(meals[0])
+//
+//                    dispatchGroup.leave()
+//                case .failure(let error):
+//                    print("The errror is \(error.localizedDescription)")
+//                }
+//            }
+//
+//        }
+//        dispatchGroup.notify(queue: .main) {
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+//            }
+//        }
+//
+        
+    }
+    private func fetchFeatured10Meals(){
+        MealService.shared.getManyRandomMeals { (result) in
+            switch result{
             
-        }
-        dispatchGroup.notify(queue: .main) {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+            case .success(let meals):
+                self.featuredRandomMeals =  meals
+                
+                //dispatchGroup.leave()
+            case .failure(let error):
+                print("The errror is \(error.localizedDescription)")
             }
         }
         
-        
+    }
+    
+    private func fetchLatestMeals (){
+        MealService.shared.getLatestMeals { (result) in
+            switch result{
+            
+            case .success(let meals):
+                self.latestMeals =  meals
+                
+                //dispatchGroup.leave()
+            case .failure(let error):
+                print("The errror is \(error.localizedDescription)")
+            }
+        }
     }
     
     
     private func featchFeatureArea(){
-        let stringUrl  = "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
-        MealService.shared.getAllArea(with: stringUrl) { (result) in
+        //let stringUrl  = "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
+        MealService.shared.getAllArea() { (result) in
             switch result{
             
             case .success(let areas):
@@ -414,9 +515,9 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     private func fetchFeaturedCategories(){
-        let categoryUrl = "https://www.themealdb.com/api/json/v1/1/categories.php"
+        //let categoryUrl = "https://www.themealdb.com/api/json/v1/1/categories.php"
         
-        MealService.shared.getAllCategories(with: categoryUrl) { (result) in
+        MealService.shared.getAllCategories() { (result) in
             switch result{
             
             case .success(let categories):
@@ -431,6 +532,9 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
             
         }
     }
+    
+    
+    
     
     //Hide bar copied from :
     //stackoverflow.com/questions/31928394/ios-swift-hide-show-uitabbarcontroller-when-scrolling-down-up

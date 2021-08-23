@@ -195,8 +195,8 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
     }
     
     private func fetchMealDetails(){
-        let urlString  = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(idMeal)"
-        MealService.shared.getIndividualMeals(with: urlString) { (result) in
+        
+        MealService.shared.getIndividualMeals(with: idMeal) { (result) in
             switch result{
             case .success(let meals):
                 DispatchQueue.main.async {

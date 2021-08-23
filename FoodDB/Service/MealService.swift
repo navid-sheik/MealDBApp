@@ -17,20 +17,32 @@ enum NetworkError: Error{
 
 class MealService {
     
+    static   let apiKey =  "9973533"
+    
     static let shared  =  MealService()
     private init(){}
+    let categoryListUrl = "https://www.themealdb.com/api/json/v2/\(apiKey)/categories.php"
+    let areaListUrl  =  "https://www.themealdb.com/api/json/v2/\(apiKey)/list.php?a=list"
+    let ingredientsListURL  = "https://www.themealdb.com/api/json/v2/\(apiKey)/list.php?i=list"
     
-    let categoryFilterUrl  = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
-    let areaFilterUrl  = "https://www.themealdb.com/api/json/v1/1/filter.php?a="
-    let ingriidientFilterUrl =  "https://www.themealdb.com/api/json/v1/1/filter.php?i="
-    let letterFilterUrl = "https://www.themealdb.com/api/json/v1/1/search.php?f="
+    let singleMealUrl  = "https://www.themealdb.com/api/json/v2/\(apiKey)/lookup.php?i="
+    let randomMealUrl =  "https://www.themealdb.com/api/json/v2/\(apiKey)/random.php"
+    
+    let manyRadomsMealUrl =  "https://www.themealdb.com/api/json/v2/\(apiKey)/randomselection.php"
+    let latestMealUrl = "https://www.themealdb.com/api/json/v2/\(apiKey)/latest.php"
+    
+    
+    let categoryFilterUrl  = "https://www.themealdb.com/api/json/v2/\(apiKey)/filter.php?c="
+    let areaFilterUrl  = "https://www.themealdb.com/api/json/v2/\(apiKey)/filter.php?a="
+    let ingriidientFilterUrl =  "https://www.themealdb.com/api/json/v2/\(apiKey)/filter.php?i="
+    let letterFilterUrl = "https://www.themealdb.com/api/json/v2/\(apiKey)/search.php?f="
 }
 
 extension MealService{
     
-    public func getAllCategories(with urlString : String, completion : @escaping(Result<[Category], NetworkError>) -> Void){
+    public func getAllCategories( completion : @escaping(Result<[Category], NetworkError>) -> Void){
         
-        guard let url =  URL(string: urlString) else {
+        guard let url =  URL(string: categoryListUrl) else {
             completion(.failure(.invalidUrl))
             return
         }
@@ -78,9 +90,9 @@ extension MealService{
     }
     
     
-    public func getAllArea(with urlString : String, completion : @escaping(Result<[AreaFood], NetworkError>) -> Void){
+    public func getAllArea( completion : @escaping(Result<[AreaFood], NetworkError>) -> Void){
         
-        guard let url =  URL(string: urlString) else {
+        guard let url =  URL(string: areaListUrl) else {
             completion(.failure(.invalidUrl))
             return
         }
@@ -134,9 +146,9 @@ extension MealService{
     
     
     
-    public func getAllIngridient(with urlString : String, completion : @escaping(Result<[Ingredient], NetworkError>) -> Void){
+    public func getAllIngridient( completion : @escaping(Result<[Ingredient], NetworkError>) -> Void){
         
-        guard let url =  URL(string: urlString) else {
+        guard let url =  URL(string: ingredientsListURL) else {
             completion(.failure(.invalidUrl))
             return
         }
@@ -217,9 +229,9 @@ extension MealService{
     
     
     
-    public func  getIndividualMeals(with url : String, completion : @escaping(Result<[Meal], NetworkError>) -> Void){
-        
-        guard let url = URL(string: url) else {
+    public func  getIndividualMeals(with urlIdMeal : String, completion : @escaping(Result<[Meal], NetworkError>) -> Void){
+        let fullPathUrl =   singleMealUrl + urlIdMeal
+        guard let url = URL(string: fullPathUrl) else {
             completion(.failure(.invalidUrl))
             return
         }
@@ -242,6 +254,84 @@ extension MealService{
         }.resume()
     }
     
+    
+    
+    public func  getIndividualRandomMeals( completion : @escaping(Result<[Meal], NetworkError>) -> Void){
+       
+        guard let url = URL(string: randomMealUrl) else {
+            completion(.failure(.invalidUrl))
+            return
+        }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data , error == nil else {
+                completion(.failure(.fetchFailed))
+                return
+            }
+            
+            do {
+                let decoder  =  JSONDecoder()
+                
+                let singleListLetter =  try? decoder.decode(MealList.self, from: data)
+                guard let singleListLetterConverted  =  singleListLetter?.meals else {
+                    completion(.failure(.conversionFailed))
+                    return
+                }
+                completion(.success(singleListLetterConverted))
+            }
+        }.resume()
+    }
+    
+    
+    public func  getManyRandomMeals( completion : @escaping(Result<[Meal], NetworkError>) -> Void){
+       
+        guard let url = URL(string: manyRadomsMealUrl) else {
+            completion(.failure(.invalidUrl))
+            return
+        }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data , error == nil else {
+                completion(.failure(.fetchFailed))
+                return
+            }
+            
+            do {
+                let decoder  =  JSONDecoder()
+                
+                let singleListLetter =  try? decoder.decode(MealList.self, from: data)
+                guard let singleListLetterConverted  =  singleListLetter?.meals else {
+                    completion(.failure(.conversionFailed))
+                    return
+                }
+                completion(.success(singleListLetterConverted))
+            }
+        }.resume()
+    }
+    
+    
+    public func  getLatestMeals( completion : @escaping(Result<[Meal], NetworkError>) -> Void){
+       
+        guard let url = URL(string: latestMealUrl) else {
+            completion(.failure(.invalidUrl))
+            return
+        }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data , error == nil else {
+                completion(.failure(.fetchFailed))
+                return
+            }
+            
+            do {
+                let decoder  =  JSONDecoder()
+                
+                let singleListLetter =  try? decoder.decode(MealList.self, from: data)
+                guard let singleListLetterConverted  =  singleListLetter?.meals else {
+                    completion(.failure(.conversionFailed))
+                    return
+                }
+                completion(.success(singleListLetterConverted))
+            }
+        }.resume()
+    }
     //    public func getImageFromUrl(with urlString : String) -> Data?{
     //
     //        guard let url =  URL(string: urlString) else {

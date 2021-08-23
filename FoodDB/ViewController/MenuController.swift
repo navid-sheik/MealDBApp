@@ -29,8 +29,15 @@ class MenuController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
+        let swipeRightRecognizer  = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
+        swipeRightRecognizer.direction = .left
+        self.collectionView.addGestureRecognizer(swipeRightRecognizer)
     }
     
+    
+    @objc public func swipeRight(){
+        delegate?.handleToggle(settingItem: nil)
+    }
     private func setUpCollectionView(){
         collectionView.register(MenuCell.self, forCellWithReuseIdentifier:  menuCellIdentifier)
         
@@ -87,6 +94,7 @@ extension MenuController : UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 50)
     }
+    
     
     
 }

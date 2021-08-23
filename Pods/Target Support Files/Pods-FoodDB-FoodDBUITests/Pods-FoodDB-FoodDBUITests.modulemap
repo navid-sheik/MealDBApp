@@ -1,0 +1,6 @@
+framework module Pods_FoodDB_FoodDBUITests {
+  umbrella header "Pods-FoodDB-FoodDBUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

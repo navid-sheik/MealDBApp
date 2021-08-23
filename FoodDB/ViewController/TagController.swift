@@ -40,8 +40,8 @@ class TagController: UICollectionViewController{
     
     
     private func fetchData(){
-        let ingredientsURL  = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
-        MealService.shared.getAllIngridient(with: ingredientsURL) { (result) in
+        //let ingredientsURL  = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
+        MealService.shared.getAllIngridient() { (result) in
             switch result{
             case .success(let ingridientList):
                 self.tags = ingridientList
