@@ -48,7 +48,7 @@ class ContainerController : UIViewController{
     }
     
     
-    private func animateMenu (shouldExpand: Bool, settingOption : Settings?){
+    private func animateMenu (shouldExpand: Bool, settingOption : SettingsV2?){
         if shouldExpand{
             //Show menu
             UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
@@ -77,33 +77,27 @@ class ContainerController : UIViewController{
     }
     
     //present single controller
-    private func navigateToSingleSettingPage(setting :  Settings?){
+    private func navigateToSingleSettingPage(setting :  SettingsV2?){
         switch setting{
         
         case .Home:
             let  controller  = SettingController()
             controller.view.backgroundColor  = .yellow
             self.present(controller, animated: true, completion: nil)
-        case .Liked:
-            let  controller  = SettingController()
-            controller.view.backgroundColor  = .blue
-            self.present(controller, animated: true, completion: nil)
-            
-        case .Settings:
-            let  controller  = SettingController()
-            controller.view.backgroundColor  = .black
-            self.present(controller, animated: true, completion: nil)
-            
-        case .Help:
-            let  controller  = SettingController()
-            controller.view.backgroundColor  = .orange
-            self.present(controller, animated: true, completion: nil)
-            
-        case .About:
-            let  controller  = SettingController()
-            controller.view.backgroundColor  = .purple
-            self.present(controller, animated: true, completion: nil)
+     
         case .none:
+            return
+        case .some(.Help):
+            let  controller  = HelpController()
+            //controller.view.backgroundColor  = .yellow
+            self.present(controller, animated: true, completion: nil)
+        case .some(.AboutUs):
+            let  controller  = AboutUsController()
+            //controller.view.backgroundColor  = .yellow
+            self.present(controller, animated: true, completion: nil)
+     
+            
+        case .some(.Version):
             return
         }
         
@@ -132,7 +126,7 @@ class ContainerController : UIViewController{
 
 
 extension ContainerController : MenuToggleProtocol{
-    func handleToggle(settingItem: Settings?){
+    func handleToggle(settingItem: SettingsV2?){
         if !isExpanded{
             loadMenu()
         }

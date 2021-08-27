@@ -35,6 +35,7 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         label.text  = "Meal Title"
         label.textAlignment =  .left
         label.textColor = .black
+        label.numberOfLines = 0
         return label
     }()
     
@@ -140,7 +141,7 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         contentView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor).isActive = true
         
         contentView.addSubview(titleMeal)
-        titleMeal.anchor(top: contentView.topAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: 50)
+        titleMeal.anchor(top: contentView.topAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
         
         contentView.addSubview(mealImageView)
         mealImageView.anchor(top: titleMeal.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: nil, width: nil, height: 250)
@@ -171,7 +172,7 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
     func populateTagsStackView(){
         for nValue in 0...tagsArrrayDisplay.count - 1 {
             let label: UILabel = UILabel()
-            
+            //label.frame =  CGRect(x: 0, y: 0, width: 200, height: 200)
             label.text = tagsArrrayDisplay[nValue]
             label.textColor = .white
             label.backgroundColor = .black
@@ -186,6 +187,7 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
             if let valueString  =  dict[nValue]?.0 {
                 if valueString != ""{
                     let label: UILabel = UILabel()
+                    //label.frame =  CGRect(x: 0, y: 0, width: 200, height: 200)
                     label.textColor = .black
                     label.text = "\u{2022} \(dict[nValue]!.0!) - \(dict[nValue]!.1!)"
                     measurementsAndIngridientsSV.addArrangedSubview(label)
@@ -202,7 +204,11 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
                 DispatchQueue.main.async {
                     self.titleMeal.text =  meals[0].strMeal
                     self.mealImageView.loadImageUrlString(urlString: meals[0].strMealThumb!)
-                    self.instructionsLabel.text =  meals[0].strInstructions
+                    if  let normalInstruction = meals[0].strInstructions{
+                        //let modifiedText = "-" + normalInstruction.replacingOccurrences(of: "\n", with: "\n- ")
+                        self.instructionsLabel.text = normalInstruction
+                    }
+              
                     self.populateDictonary(meal: meals[0])
                     self.populateMeasurementsStackView()
                     self.organizeTags(meal: meals[0])

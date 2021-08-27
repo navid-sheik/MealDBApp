@@ -10,19 +10,39 @@ import UIKit
 
 
 
-class TagController: UICollectionViewController{
+class TagController: UIViewController{
+    
+    var collectionView :  UICollectionView  = {
+        let layout =  UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let cv  = UICollectionView (frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .white
+        cv.alwaysBounceHorizontal = false
+        cv.showsHorizontalScrollIndicator = false
+        return cv
+    }()
+    
+    
     
     let identifier : String  =  "tagIdentifierCell"
     var tags = [Ingredient]()
+    var hideStatusBar: Bool  =  false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        self.edgesForExtendedLayout = []
         collectionView.backgroundColor =  .white
         collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView.register(TagCell.self, forCellWithReuseIdentifier: identifier)
+        view.addSubview(collectionView)
+        collectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
         fetchData()
+    
     }
+  
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,16 +76,16 @@ class TagController: UICollectionViewController{
 }
 
 
-extension TagController  : UICollectionViewDelegateFlowLayout{
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+extension TagController  : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tags.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TagCell
         if tags.count != 0 {
             if let ingredientName = tags[indexPath.row].strIngredient  {
@@ -111,7 +131,7 @@ extension TagController  : UICollectionViewDelegateFlowLayout{
         return UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let ingredientName = tags[indexPath.row].strIngredient else {
             return
         }
@@ -122,4 +142,57 @@ extension TagController  : UICollectionViewDelegateFlowLayout{
         
         
     }
+    
+    
+//    //Animation for status bar
+//    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+//        return .slide
+//    }
+//    
+//    override var prefersStatusBarHidden: Bool{
+//        //return isExpanded
+//        return hideStatusBar
+//    }
+//    
+//    
+//    private func animateStatusBar(){
+//        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
+//            self.setNeedsStatusBarAppearanceUpdate()
+//        } completion: { (_) in
+//            return
+//        }
+//        
+//    }
+//    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        hideStatusBar =  true
+//        self.animateStatusBar()
+//    }
+//    
+//    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        hideStatusBar = false
+//        self.animateStatusBar()
+//    }
+    //Figure out how to hide scroll bar
+    
+//
+//    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        if targetContentOffset.pointee.y >= 0 {
+//            animateStatusBar()
+//        }
+//        else{
+//            animateStatusBar()
+//        }
+//    }
+//    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+//        //dragging down
+//        hideStatusBar = true
+//        if (actualPosition.y > 0){
+//
+//            animateStatusBar()
+//        }
+//        else {
+//            //dragging up
+//        }
+//    }
 }

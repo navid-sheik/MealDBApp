@@ -59,25 +59,25 @@ class IndividualAreaList: UIViewController {
         
         //Small Items
         let smallItemGeneral  = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1)))
-        smallItemGeneral.contentInsets.trailing = inset
+        //smallItemGeneral.contentInsets.trailing = inset
         
         let generalGroup =  NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/5)), subitems: [smallItemGeneral])
-        generalGroup.contentInsets.leading = inset
-        generalGroup.contentInsets.bottom = inset
+        //generalGroup.contentInsets.leading = inset
+        //generalGroup.contentInsets.bottom = inset
         
         //Large Item + 2 small cell side
         let smallItem  = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/2)))
-        smallItem.contentInsets.bottom =  inset
+        //smallItem.contentInsets.bottom =  inset
         
         let singleItem  = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         
         let singleGroup   =  NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(2/3), heightDimension: .fractionalHeight(1)), subitem: singleItem, count: 1)
-        singleGroup.contentInsets.leading =  inset
-        singleGroup.contentInsets.trailing =  inset
-        singleGroup.contentInsets.bottom =  inset
+        //singleGroup.contentInsets.leading =  inset
+        //singleGroup.contentInsets.trailing =  inset
+       // singleGroup.contentInsets.bottom =  inset
         
         let smallItemGroup  =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1)), subitems: [smallItem])
-        smallItemGroup.contentInsets.trailing =  inset
+        //smallItemGroup.contentInsets.trailing =  inset
         
         let largeGroup  = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(3/5)), subitems: [singleGroup, smallItemGroup])
         

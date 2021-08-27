@@ -20,10 +20,13 @@
 		6D1E882B26C9C9D4009770D8 /* CustomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E882A26C9C9D4009770D8 /* CustomMenuBar.swift */; };
 		6D24FE0726B6E9D00052BD55 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D24FE0626B6E9D00052BD55 /* ImageExtension.swift */; };
 		6D285AF626AC4C64007822BA /* IndividualAreaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D285AF526AC4C64007822BA /* IndividualAreaList.swift */; };
+		6D2ADF8426D81A2500D0C7D4 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2ADF8326D81A2500D0C7D4 /* AboutUsController.swift */; };
+		6D2ADF9026D8314B00D0C7D4 /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2ADF8F26D8314B00D0C7D4 /* HelpController.swift */; };
 		6D37A33A269E12DF008D77AD /* MealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D37A339269E12DF008D77AD /* MealService.swift */; };
 		6D4C828626BDA0FB00DF4159 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4C828526BDA0FB00DF4159 /* MenuCell.swift */; };
 		6D541C0326A1B00C00AF0ED8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D541C0226A1B00C00AF0ED8 /* Category.swift */; };
 		6D541C0826A1B26C00AF0ED8 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D541C0726A1B26C00AF0ED8 /* Meal.swift */; };
+		6D6FC9A726D9191800204F41 /* HideStatusBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FC9A626D9191800204F41 /* HideStatusBarProtocol.swift */; };
 		6D70A8F726BEBADB00F96F80 /* MealTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D70A8F626BEBADB00F96F80 /* MealTabController.swift */; };
 		6D70A8FF26BEBEA700F96F80 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D70A8FE26BEBEA700F96F80 /* ContainerController.swift */; };
 		6D70A91026BEC39F00F96F80 /* MenuToggleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D70A90F26BEC39F00F96F80 /* MenuToggleProtocol.swift */; };
@@ -90,10 +93,13 @@
 		6D1E882A26C9C9D4009770D8 /* CustomMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuBar.swift; sourceTree = "<group>"; };
 		6D24FE0626B6E9D00052BD55 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		6D285AF526AC4C64007822BA /* IndividualAreaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAreaList.swift; sourceTree = "<group>"; };
+		6D2ADF8326D81A2500D0C7D4 /* AboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
+		6D2ADF8F26D8314B00D0C7D4 /* HelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
 		6D37A339269E12DF008D77AD /* MealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealService.swift; sourceTree = "<group>"; };
 		6D4C828526BDA0FB00DF4159 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		6D541C0226A1B00C00AF0ED8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		6D541C0726A1B26C00AF0ED8 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		6D6FC9A626D9191800204F41 /* HideStatusBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideStatusBarProtocol.swift; sourceTree = "<group>"; };
 		6D70A8F626BEBADB00F96F80 /* MealTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabController.swift; sourceTree = "<group>"; };
 		6D70A8FE26BEBEA700F96F80 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 		6D70A90F26BEC39F00F96F80 /* MenuToggleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuToggleProtocol.swift; sourceTree = "<group>"; };
@@ -182,9 +188,27 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		6D2ADF8226D819E800D0C7D4 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				6D2ADF8326D81A2500D0C7D4 /* AboutUsController.swift */,
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		6D2ADF8E26D8313800D0C7D4 /* Help&Contact */ = {
+			isa = PBXGroup;
+			children = (
+				6D2ADF8F26D8314B00D0C7D4 /* HelpController.swift */,
+			);
+			path = "Help&Contact";
+			sourceTree = "<group>";
+		};
 		6D37A336269E124E008D77AD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6D2ADF8E26D8313800D0C7D4 /* Help&Contact */,
+				6D2ADF8226D819E800D0C7D4 /* AboutUs */,
 				6DBFBD4226CD2C1E00ABF1E5 /* SettingController */,
 				6DC2BA9D269D0A96006667A8 /* CategoryController.swift */,
 				6D8C024126A078A200C1E5EA /* CategoryList.swift */,
@@ -227,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				6D70A90F26BEC39F00F96F80 /* MenuToggleProtocol.swift */,
+				6D6FC9A626D9191800204F41 /* HideStatusBarProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -606,6 +631,7 @@
 			files = (
 				6DBFBD4426CD2C2B00ABF1E5 /* SettingController.swift in Sources */,
 				6DC2BA9E269D0A96006667A8 /* CategoryController.swift in Sources */,
+				6D2ADF9026D8314B00D0C7D4 /* HelpController.swift in Sources */,
 				6D37A33A269E12DF008D77AD /* MealService.swift in Sources */,
 				6DB5863026B07894007FEBE0 /* Ingredient.swift in Sources */,
 				6D0F3F9726A645B80062F35E /* AllCategoryList.swift in Sources */,
@@ -618,6 +644,7 @@
 				6DC30ACB26BD6E7400F7B837 /* MenuController.swift in Sources */,
 				6D1BDEC326C475C60076210D /* BannerCell.swift in Sources */,
 				6D8C024B26A0F19A00C1E5EA /* HeaderCategory.swift in Sources */,
+				6D6FC9A726D9191800204F41 /* HideStatusBarProtocol.swift in Sources */,
 				6D9DDAD626AC83330081B16E /* LetterCell.swift in Sources */,
 				6D74F1CC26C1B9B90021219D /* YoutuberString.swift in Sources */,
 				6D71892826C80EB600AEA8A7 /* Settings.swift in Sources */,
@@ -631,6 +658,7 @@
 				6D9DDAD126AC7B900081B16E /* AtoZController.swift in Sources */,
 				6DC2BA9C269D0A96006667A8 /* SceneDelegate.swift in Sources */,
 				6DB5862B26B07244007FEBE0 /* TagCell.swift in Sources */,
+				6D2ADF8426D81A2500D0C7D4 /* AboutUsController.swift in Sources */,
 				6DA95C6D26AF689600509F23 /* MealViewController.swift in Sources */,
 				6DA95C6826AF5C4E00509F23 /* TagController.swift in Sources */,
 				6D1CCB5A26B5A2ED007006A5 /* MainCardSlider.swift in Sources */,

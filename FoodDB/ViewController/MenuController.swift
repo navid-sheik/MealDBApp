@@ -28,6 +28,7 @@ class MenuController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = []
         setUpCollectionView()
         let swipeRightRecognizer  = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
         swipeRightRecognizer.direction = .left
@@ -45,7 +46,7 @@ class MenuController : UIViewController{
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
-        collectionView.anchor(top: view.topAnchor, left: view.leadingAnchor, right:  view.trailingAnchor, bottom: view.bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
+        collectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leadingAnchor, right:  view.trailingAnchor, bottom: view.bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
     }
     
 }
@@ -56,12 +57,12 @@ extension MenuController : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Settings.allCases.count
+        return SettingsV2.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let setting  =  Settings.init(rawValue: indexPath.row)
+        let setting  =  SettingsV2.init(rawValue: indexPath.row)
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: menuCellIdentifier, for: indexPath) as! MenuCell
         cell.label.text =  setting?.description
         if let stringImage  = setting?.imageSetting {
@@ -87,7 +88,7 @@ extension MenuController : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let itemSelected  =  Settings.init(rawValue: indexPath.row)
+        let itemSelected  =  SettingsV2.init(rawValue: indexPath.row)
         delegate?.handleToggle(settingItem: itemSelected)
     }
     
@@ -122,9 +123,9 @@ class CustomHeaderForMenu : UICollectionReusableView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(imageLogo)
-        imageLogo.anchor(top: topAnchor, left: leadingAnchor, right: nil, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: 0, paddingBottom: 0, width: 180, height: 35)
-        addSubview(barDividier)
-        barDividier.anchor(top: imageLogo.bottomAnchor, left: leadingAnchor, right: trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 0, paddingRight: -56, paddingBottom: 0, width: nil, height: 2)
+        imageLogo.anchor(top: topAnchor, left: leadingAnchor, right: nil, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: 0, paddingBottom: nil, width: 180, height: 35)
+        //addSubview(barDividier)
+        //barDividier.anchor(top: imageLogo.bottomAnchor, left: leadingAnchor, right: trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 0, paddingRight: -56, paddingBottom: 0, width: nil, height: 2)
     }
     
     required init?(coder: NSCoder) {

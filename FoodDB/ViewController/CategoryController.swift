@@ -53,6 +53,7 @@ class CategoryController : UIViewController {
                 }
             case .failure(let error):
                 print("Failed somethign\(error)")
+                
             }
         }
     }

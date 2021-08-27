@@ -17,6 +17,8 @@ class MealTabController  :  UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = []
+        
         tabBar.tintColor =  .darkGray
         tabBar.isTranslucent = false
         
@@ -48,13 +50,14 @@ class MealTabController  :  UITabBarController{
         //Tag controller - Fifth Controller
         let itemControllerItem5 = UITabBarItem(title: "Tags", image: UIImage(systemName: "tag"), tag: 4)
         let layout  =  UICollectionViewFlowLayout()
-        let rootController5 =  TagController(collectionViewLayout: layout)
+        let rootController5 =  TagController()
         let controller5  = UINavigationController(rootViewController: rootController5)
         controller5.tabBarItem = itemControllerItem5
         
         //Assign controllers
         viewControllers =  [controller1,controller2, controller3, controller4, controller5]
     }
+    
     
     //Solve problem of assigning the delegate
     func resetDelegate (){
@@ -88,7 +91,7 @@ class MealTabController  :  UITabBarController{
 
 
 extension MealTabController : MenuToggleProtocol{
-    func handleToggle(settingItem: Settings?) {
+    func handleToggle(settingItem: SettingsV2?) {
         delegateToggle?.handleToggle(settingItem: settingItem)
     }
 }

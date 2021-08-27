@@ -28,6 +28,7 @@ class TagCell :  CustomCell{
     
     
     private func stylingCell(){
+        self.contentView.backgroundColor =  .black
         self.contentView.layer.borderWidth =  1.0
         self.contentView.layer.borderColor =  UIColor.clear.cgColor
         self.contentView.layer.masksToBounds = true

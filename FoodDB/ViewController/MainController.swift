@@ -159,6 +159,7 @@ class MainController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.edgesForExtendedLayout  = []
         setCustomNavigationbar()
         setUpCollectionView()
         fetchFeaturedTags()
@@ -278,8 +279,8 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
             return featuredAreas.count
         }
         else if section == 4{
-            //return featuredCategories.count
-            return 4
+            return featuredCategories.count
+            //return 4
         }else if section == 5{
             return latestMeals.count
         }

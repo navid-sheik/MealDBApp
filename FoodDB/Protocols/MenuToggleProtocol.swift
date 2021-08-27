@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol MenuToggleProtocol {
-    func handleToggle(settingItem : Settings?)
+    func handleToggle(settingItem : SettingsV2?)
 }
