@@ -11,7 +11,7 @@ import UIKit
 
 class MenuController : UIViewController{
     
-    var delegate:  MenuToggleProtocol?
+    weak var delegate:  MenuToggleProtocol?
     
     
     let menuCellIdentifier : String  =  "menuCellIdentifier"

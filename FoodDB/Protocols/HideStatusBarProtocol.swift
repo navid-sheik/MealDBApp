@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-protocol HideStatuBarProtocol {
+protocol HideStatuBarProtocol : class{
     func toggleStatusBar (isHidden : Bool)
 }

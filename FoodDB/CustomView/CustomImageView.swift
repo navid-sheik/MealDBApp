@@ -23,7 +23,9 @@ class CustomImageView: UIImageView {
             self.image =  imageFromCache
             return
         }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            guard let self = self else { return }
+            
             guard let data = data, error == nil else {
                 return
             }

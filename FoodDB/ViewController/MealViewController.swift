@@ -79,7 +79,7 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
     let tagStackView : UIStackView =  {
         let stackview =  UIStackView()
         stackview.axis =  .horizontal
-        stackview.distribution = .equalSpacing
+        stackview.distribution = .fillProportionally
         stackview.alignment = .center
         stackview.spacing =  20
         return stackview
@@ -101,6 +101,17 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
+    
+    
+    let ingridientTitleLabel  : UILabel =  {
+        let label =  UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "INGREDIENTS"
+        label.font =  UIFont.boldSystemFont(ofSize: 24)
+        return label
+    }()
+    
+    
     
     init(idMeal  : String) {
         self.idMeal =  idMeal
@@ -150,18 +161,23 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
         instructionsLabel.anchor(top: mealImageView.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
         
         contentView.addSubview(tagsScrollView)
-        tagsScrollView.anchor(top: instructionsLabel.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: 5, paddingBottom: nil, width: nil, height: 50)
-        
+        tagsScrollView.anchor(top: instructionsLabel.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: 50)
+        //tagStackView.backgroundColor = .darkGray
         tagsScrollView.addSubview(tagStackView)
         tagStackView.translatesAutoresizingMaskIntoConstraints = false
         tagStackView.topAnchor.constraint(equalTo: tagsScrollView.topAnchor).isActive = true
         tagStackView.leadingAnchor.constraint(equalTo: tagsScrollView.leadingAnchor).isActive = true
         tagStackView.trailingAnchor.constraint(equalTo: tagsScrollView.trailingAnchor).isActive = true
         tagStackView.heightAnchor.constraint(equalTo: tagsScrollView.heightAnchor).isActive = true
+        tagStackView.bottomAnchor.constraint(equalTo: tagsScrollView.bottomAnchor).isActive = true
+        //tagStackView.backgroundColor  = .brown
+        
+        contentView.addSubview(ingridientTitleLabel)
+        ingridientTitleLabel.anchor(top: tagStackView.bottomAnchor,left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
         
         contentView.addSubview(measurementsAndIngridientsSV)
         //key of scrollview for scrolling
-        measurementsAndIngridientsSV.anchor(top: tagsScrollView.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
+        measurementsAndIngridientsSV.anchor(top: ingridientTitleLabel.bottomAnchor, left: contentView.leadingAnchor, right: contentView.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
         
         contentView.addSubview(player)
         player.delegate  = self
@@ -171,12 +187,13 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
     
     func populateTagsStackView(){
         for nValue in 0...tagsArrrayDisplay.count - 1 {
-            let label: UILabel = UILabel()
+            let label: InsetLabel = InsetLabel()
             //label.frame =  CGRect(x: 0, y: 0, width: 200, height: 200)
             label.text = tagsArrrayDisplay[nValue]
             label.textColor = .white
             label.backgroundColor = .black
-            label.font =  UIFont.boldSystemFont(ofSize: 16)
+            label.font =  UIFont.boldSystemFont(ofSize: 18)
+            label.textAlignment =  .center
             tagStackView.addArrangedSubview(label)
         }
     }
@@ -198,7 +215,8 @@ class MealViewController : UIViewController, YTPlayerViewDelegate{
     
     private func fetchMealDetails(){
         
-        MealService.shared.getIndividualMeals(with: idMeal) { (result) in
+        MealService.shared.getIndividualMeals(with: idMeal) { [weak self] (result) in
+            guard let self = self else { return }
             switch result{
             case .success(let meals):
                 DispatchQueue.main.async {

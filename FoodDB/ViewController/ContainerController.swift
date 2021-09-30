@@ -8,21 +8,37 @@
 import Foundation
 import UIKit
 
-class ContainerController : UIViewController{
+class ContainerController : UIViewController {
     
     
     var centerController : UIViewController!
     var menuController  :  MenuController!
+    var internetConnectionController :  NoInternetConnection!
     var isExpanded : Bool =  false
     
     
     //Load view
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkMonitor.shared.delegate = self
         view.backgroundColor =  .black
+
         loadMainView()
+        //monitorNetwork()
+ 
     }
     
+    //To perfect
+    private func monitorNetwork (){
+        if NetworkMonitor.shared.isConnected{
+            print("vv")
+            
+        }else {
+            loadNoInternetConnnection()
+            animateNoInternet(internetConnection: true)
+        }
+        
+    }
     
     //Load Main Tab Controller, tabController intialize first its view controllers
     private func loadMainView(){
@@ -81,9 +97,7 @@ class ContainerController : UIViewController{
         switch setting{
         
         case .Home:
-            let  controller  = SettingController()
-            controller.view.backgroundColor  = .yellow
-            self.present(controller, animated: true, completion: nil)
+           return
      
         case .none:
             return
@@ -134,7 +148,64 @@ extension ContainerController : MenuToggleProtocol{
         animateMenu(shouldExpand: isExpanded, settingOption: settingItem)
     }
 }
+extension ContainerController :  NoInternetProtocol{
+    func changedValue() {
+        print("Network changes")
 
+        DispatchQueue.main.async {
+
+            if NetworkMonitor.shared.isConnected{
+                self.loadNoInternetConnnection()
+                self.animateNoInternet(internetConnection: false)
+
+            }else {
+                self.animateNoInternet(internetConnection: true)
+
+            }
+
+        }
+      
+    }
+    
+    //Load the menu only once,single instance
+    private func loadNoInternetConnnection(){
+        if internetConnectionController == nil{
+            internetConnectionController =  NoInternetConnection()
+            //menuController.delegate = self
+            //view.insertSubview(menuController.view, aboveSubview: centerController.view)
+            self.internetConnectionController.view.frame.origin.y =  self.internetConnectionController.view.frame.height
+            //self.menuController.view.frame.size.width = self.centerController.view.frame.width - 56
+            //self.internetConnectionController.view.alpha =  0.5
+            view.insertSubview(internetConnectionController.view, at: 1)
+            addChild(internetConnectionController)
+            internetConnectionController.didMove(toParent: self)
+            
+        }
+    }
+    
+    
+    private func animateNoInternet (internetConnection : Bool){ 
+        if internetConnection{
+            //Show menu
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+                self.internetConnectionController.view.frame.origin.y =  0
+            }, completion :nil)
+            
+        }else {
+            
+            //Hide menu
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn) {
+                self.internetConnectionController.view.frame.origin.y = self.internetConnectionController.view.frame.height
+                //self.internetConnectionController.view.removeFromSuperview()
+            } completion: { (_) in
+               return
+            }
+            
+        }
+        //animateStatusBar()
+    }
+    
+}
 
 
 

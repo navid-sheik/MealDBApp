@@ -89,7 +89,8 @@ class IndividualAreaList: UIViewController {
     }
     
     private func fetchData(){
-        MealService.shared.getIndividualListArea(with: areaFood) { (result) in
+        MealService.shared.getIndividualListArea(with: areaFood) { [weak self] (result) in
+            guard let self = self else { return }
             switch result{
             
             case .success(let mealForAreaPreview):

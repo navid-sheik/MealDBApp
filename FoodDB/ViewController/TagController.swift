@@ -61,7 +61,8 @@ class TagController: UIViewController{
     
     private func fetchData(){
         //let ingredientsURL  = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
-        MealService.shared.getAllIngridient() { (result) in
+        MealService.shared.getAllIngridient() { [weak self] (result) in
+            guard let self = self else { return }
             switch result{
             case .success(let ingridientList):
                 self.tags = ingridientList

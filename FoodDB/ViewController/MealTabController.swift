@@ -11,7 +11,7 @@ import UIKit
 
 class MealTabController  :  UITabBarController{
     
-    var delegateToggle  : MenuToggleProtocol?
+    weak var delegateToggle  : MenuToggleProtocol?
     var mainController : MainController!
     
     
@@ -48,7 +48,7 @@ class MealTabController  :  UITabBarController{
         controller4.tabBarItem = itemControllerItem4
         
         //Tag controller - Fifth Controller
-        let itemControllerItem5 = UITabBarItem(title: "Tags", image: UIImage(systemName: "tag"), tag: 4)
+        let itemControllerItem5 = UITabBarItem(title: "Ingredients", image: UIImage(systemName: "tag"), tag: 4)
         let layout  =  UICollectionViewFlowLayout()
         let rootController5 =  TagController()
         let controller5  = UINavigationController(rootViewController: rootController5)

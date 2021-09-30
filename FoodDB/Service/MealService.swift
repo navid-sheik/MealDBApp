@@ -40,7 +40,7 @@ class MealService {
 
 extension MealService{
     
-    public func getAllCategories( completion : @escaping(Result<[Category], NetworkError>) -> Void){
+    public func getAllCategories( completion : @escaping(Result<[Category], NetworkError>) -> Void){ 
         
         guard let url =  URL(string: categoryListUrl) else {
             completion(.failure(.invalidUrl))
@@ -65,7 +65,7 @@ extension MealService{
         
     }
     
-    public func  getIndividualListCategory(with categoryName : String, completion : @escaping(Result<[CategoryListIndividual], NetworkError>) -> Void){
+    public func  getIndividualListCategory(with categoryName : String, completion : @escaping(Result<[CategoryListIndividual], NetworkError>) -> Void){ 
         
         let fullPath  =  categoryFilterUrl +  categoryName
         guard let url = URL(string: fullPath) else {

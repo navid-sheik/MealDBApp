@@ -78,7 +78,8 @@ class CategoryList: UIViewController {
     }
     
     private func fetchDataForCategory(){
-        MealService.shared.getIndividualListCategory(with: categoryName) { (result) in
+        MealService.shared.getIndividualListCategory(with: categoryName) { [weak self]  (result) in
+            guard let self = self else { return }
             switch result{
             case .success(let allListCategory):
                 DispatchQueue.main.async {

@@ -10,6 +10,18 @@ import UIKit
 
 class SingleIngredientController : UIViewController{
     
+    
+    
+  
+    var noMessageView : NoResultMessage = {
+        let view  =  NoResultMessage()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    
+    
+    
     var ingredientName: String
     var identifierPreviewIngridient : String =  "identifierPreviewIngridientCell"
     var listMealsByIngredientsPreview : [CategoryListIndividual]?
@@ -19,10 +31,11 @@ class SingleIngredientController : UIViewController{
                 return
             }
             titleIngredient.text = ingredient?.strIngredient
-            guard let ingredientDescription  =  ingredient?.strDescription else{
-                return
+            if  let ingredientDescription  =  ingredient?.strDescription {
+                descriptionINgridient.text =  ingredientDescription
             }
-            descriptionINgridient.text =  ingredientDescription
+           
+ 
         }
     }
     
@@ -105,6 +118,7 @@ class SingleIngredientController : UIViewController{
         view.addSubview(titleIngredient)
         view.addSubview(descriptionScrollView)
         view.addSubview(colletionView)
+        view.addSubview(noMessageView)
         
         titleIngredient.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 5, paddingRight: -5, paddingBottom: nil, width: nil, height: nil)
         
@@ -126,7 +140,14 @@ class SingleIngredientController : UIViewController{
         descriptionINgridient.anchor(top: descriptionScrollView.topAnchor, left: descriptionScrollView.leadingAnchor, right: descriptionScrollView.trailingAnchor, bottom: descriptionScrollView.bottomAnchor, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: -20, width: nil, height: nil)
         descriptionINgridient.widthAnchor.constraint(equalTo: descriptionScrollView.widthAnchor).isActive = true
         
+        
+        
         colletionView.anchor(top: descriptionScrollView.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
+        
+        noMessageView.anchor(top: descriptionScrollView.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
+        
+       
+        
     }
     
     
@@ -152,15 +173,22 @@ class SingleIngredientController : UIViewController{
         }else{
             ingredientToPass =  fullIngredientArray[0]
         }
-        MealService.shared.getIndividualListIngredient(with: ingredientToPass) { (result) in
+        MealService.shared.getIndividualListIngredient(with: ingredientToPass) { [weak self] (result) in
+            guard let self = self else { return }
             switch result{
             
             case .success(let mealForIngredientPreview):
                 self.listMealsByIngredientsPreview  = mealForIngredientPreview
                 DispatchQueue.main.async {
+                    self.colletionView.isHidden = false
+                    self.noMessageView.isHidden = true
                     self.colletionView.reloadData()
                 }
             case .failure(let error):
+                DispatchQueue.main.async {
+                    self.colletionView.isHidden = true
+                    self.noMessageView.isHidden = false
+                }
                 print("There is an error while fetching area meals  \(error)")
             }
         }

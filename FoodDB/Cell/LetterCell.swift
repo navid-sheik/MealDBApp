@@ -15,7 +15,8 @@ class LetterCell: CustomCell {
     override var isSelected: Bool {
         didSet {
             self.layer.borderWidth = isSelected ? 2.0 : 0
-            self.layer.borderColor =  isSelected ?  UIColor.gray.cgColor :  UIColor.clear.cgColor
+            self.layer.borderColor =  isSelected ?  UIColor.systemGray6.cgColor :  UIColor.clear.cgColor
+            self.backgroundColor = isSelected ?  UIColor.systemGray6 :  UIColor.clear
         }
     }
     

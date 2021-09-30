@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-protocol ReloadHeaderDelegate {
+protocol ReloadHeaderDelegate : class {
     func reloadCollectioView()
 }
 
 class Headercategory :  UICollectionReusableView{
     
-    var delegate : ReloadHeaderDelegate?
+    weak var delegate : ReloadHeaderDelegate?
     
     var individualCategory: Category?{
         didSet{

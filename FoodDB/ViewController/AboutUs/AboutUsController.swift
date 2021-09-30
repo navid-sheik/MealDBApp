@@ -18,10 +18,26 @@ class AboutUsController: UIViewController{
         return imageView
     }()
     
+    var titlePage  : UILabel =  {
+        let label  = UILabel()
+        label.text = " ABOUT US"
+        label.font = UIFont.boldSystemFont(ofSize: 40)
+        label.numberOfLines =  1
+        label.textAlignment = .center
+        return label
+    }()
+    
+    var aboutUsImageView : UIImageView =  {
+        let imageView  = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image =   UIImage(named: "about_us_pic")
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     
     let slogan : UILabel = {
         let label  = UILabel()
-        label.text = "This is something"
+        label.text = " 'There is no love sincerer than the love of food.' – George Bernard Shaw"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.numberOfLines =  0
         label.textAlignment = .center
@@ -32,7 +48,7 @@ class AboutUsController: UIViewController{
     
     let mission : UILabel = {
         let label  = UILabel()
-        label.text = "This is somethinjdsjvnwvj  jdwnvdjvnsjvsv ddovsdnvdsvodsmvdk sncodsividsvd nkovdnvkdvkdsnvjdsnvsd jv sdjvndsj  jcdsnvdjsvnog"
+        label.text = "Gourmex was born in 2021 with the purpose of unify all existing recipes in one place. The app comprise all type of recipes and ingredients  , giving the luxury of expand your knowledge in different cuisines. If you love cooking or look for ideas for your next meal, this is the perfect place for you."
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines =  0
         label.textAlignment  = .justified
@@ -60,31 +76,42 @@ class AboutUsController: UIViewController{
     
     
     private func setUpViews(){
-        view.addSubview(logo)
-        logo.anchor(top: view.topAnchor, left: nil, right: nil, bottom: nil, paddingTop: 50, paddingLeft: nil, paddingRight: nil, paddingBottom: nil, width: 200, height: 100)
-        logo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        view.addSubview(logo)
+//        logo.anchor(top: view.topAnchor, left: nil, right: nil, bottom: nil, paddingTop: 50, paddingLeft: nil, paddingRight: nil, paddingBottom: nil, width: 200, height: 100)
+//        logo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(titlePage)
+        titlePage.anchor(top: view.topAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 50, paddingLeft: 0, paddingRight: 0, paddingBottom: nil, width: nil, height: 100)
+        titlePage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        
+        
+        
         view.addSubview(slogan)
-        slogan.anchor(top: logo.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: -10, paddingBottom: nil, width: nil, height: nil)
+        slogan.anchor(top: titlePage.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: -10, paddingBottom: nil, width: nil, height: nil)
+        
+        view.addSubview(aboutUsImageView)
+        aboutUsImageView.anchor(top: slogan.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: -10, paddingBottom: nil, width: nil, height: 200)
         
         view.addSubview(mission)
-        mission.anchor(top: slogan.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: -10, paddingBottom: nil, width: nil, height: nil)
+        mission.anchor(top: aboutUsImageView.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: -10, paddingBottom: nil, width: nil, height: nil)
         
         
         
         view.addSubview(shareButton)
-        shareButton.anchor(top: mission.bottomAnchor, left: nil, right: nil, bottom: nil, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: 150, height: 40)
+        shareButton.anchor(top: nil, left: nil, right: nil, bottom: view.bottomAnchor, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: -75, width: 150, height: 40)
         shareButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         shareButton.addTarget(self, action: #selector(presentShareSheet), for: .touchUpInside)
     }
     
     
     @objc private func presentShareSheet(_ sender: UIButton  ){
-        guard let image =  UIImage(named: "food3") , let url  =  URL(string: "https://google.com") else{
+        guard  let url  =  URL(string: "https://google.com") else{
             return
         }
         
         let shareSheetVc  =  UIActivityViewController(
-            activityItems: [image, url],
+            activityItems: [ url],
             applicationActivities: nil
         )
         // Ipad suppoty

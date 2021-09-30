@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-protocol MenuToggleProtocol {
+protocol MenuToggleProtocol : class{
     func handleToggle(settingItem : SettingsV2?)
 }

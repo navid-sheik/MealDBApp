@@ -24,6 +24,16 @@ class HelpController : UIViewController, UINavigationControllerDelegate, MFMailC
     }()
     
     
+    var titlePage  : UILabel =  {
+        let label  = UILabel()
+        label.text = " CONTACT US"
+        label.font = UIFont.boldSystemFont(ofSize: 40)
+        label.numberOfLines =  1
+        label.textAlignment = .center
+        return label
+    }()
+    
+    
     let hoursLabel : UILabel = {
         let label  = UILabel()
         label.text = "Our customer service hours are available 24/7."
@@ -62,7 +72,7 @@ class HelpController : UIViewController, UINavigationControllerDelegate, MFMailC
     let locationLabel : UILabel  = {
         let label  = UILabel()
         let attributext =  NSMutableAttributedString(string: "Location: ", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14) ])
-        let emailAttributedText  = NSMutableAttributedString(string: "City of Industry, CA 91745, USA", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14) ])
+        let emailAttributedText  = NSMutableAttributedString(string: "London,UK", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14) ])
         attributext.append(emailAttributedText)
         label.attributedText =  attributext
         label.numberOfLines =  0
@@ -97,11 +107,15 @@ class HelpController : UIViewController, UINavigationControllerDelegate, MFMailC
     }
     
     private func setUpViews(){
-        view.addSubview(logo)
-        logo.anchor(top: view.topAnchor, left: nil, right: nil, bottom: nil, paddingTop: 50, paddingLeft: nil, paddingRight: nil, paddingBottom: nil, width: 200, height: 100)
-        logo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        view.addSubview(logo)
+//        logo.anchor(top: view.topAnchor, left: nil, right: nil, bottom: nil, paddingTop: 50, paddingLeft: nil, paddingRight: nil, paddingBottom: nil, width: 200, height: 100)
+//        logo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        view.addSubview(titlePage)
+        titlePage.anchor(top: view.topAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 50, paddingLeft: 0, paddingRight: 0, paddingBottom: nil, width: nil, height: 100)
+        titlePage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         view.addSubview(hoursLabel)
-        hoursLabel.anchor(top: logo.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: -10, paddingBottom: nil, width: nil, height: nil)
+        hoursLabel.anchor(top: titlePage.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: -10, paddingBottom: nil, width: nil, height: nil)
         
         view.addSubview(descriptionLabel)
         descriptionLabel.anchor(top: hoursLabel.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: nil, paddingTop: 10, paddingLeft: 10, paddingRight: -10, paddingBottom: nil, width: nil, height: nil)
@@ -134,7 +148,7 @@ class HelpController : UIViewController, UINavigationControllerDelegate, MFMailC
         }
         else{
             
-            guard let url = URL(string: "https://google.com") else {
+            guard let url = URL(string: "https://gmail.com") else {
                 return
             }
             let vc =  SFSafariViewController(url: url)

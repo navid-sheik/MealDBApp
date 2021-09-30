@@ -11,7 +11,7 @@ import UIKit
 class MainController : UIViewController{
     
     
-    var delegateToggle  : MenuToggleProtocol!
+    weak var delegateToggle  : MenuToggleProtocol!
     private let  cellIdentifierMain : String =  "cellIdentifierMain"
     
     var bannerImagesNames  =  ["food0", "food1", "food2", "food3"]
@@ -160,18 +160,40 @@ class MainController : UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .white
         self.edgesForExtendedLayout  = []
+    
         setCustomNavigationbar()
         setUpCollectionView()
+        feathAllDataNeeded()
+        DispatchQueue.main.async {
+            self.timer =  Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+        }
+     
+    }
+    
+    
+    func feathAllDataNeeded(){
+        
+        let group = DispatchGroup()
+        
+        
+         
+        group.enter()
         fetchFeaturedTags()
         featchFeatureArea()
         fetchFeaturedCategories()
         //feathThreeRandomMeals()
         fetchFeatured10Meals()
         fetchLatestMeals()
-        DispatchQueue.main.async {
-            self.timer =  Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+        group.leave()
+        
+        
+        group.notify(queue: DispatchQueue.global()) {
+          
+            DispatchQueue.main.async() {
+                self.collectionView.refreshControl?.endRefreshing()
+            }
+            
         }
-     
     }
     
     
@@ -237,6 +259,13 @@ class MainController : UIViewController{
         collectionView.dataSource = self
         view.addSubview(collectionView)
         collectionView.anchor(top: navigationViewBar.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: -20, width: nil, height: nil)
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self, action: #selector(refreshingData), for: .valueChanged)
+    }
+    
+    
+    @objc private func refreshingData (){
+        feathAllDataNeeded()
     }
     
     //Menu delegate for menu
@@ -457,7 +486,8 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
         
     }
     private func fetchFeatured10Meals(){
-        MealService.shared.getManyRandomMeals { (result) in
+        MealService.shared.getManyRandomMeals {[weak self] (result) in
+            guard let self = self else { return }
             switch result{
             
             case .success(let meals):
@@ -465,14 +495,16 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
                 
                 //dispatchGroup.leave()
             case .failure(let error):
-                print("The errror is \(error.localizedDescription)")
+                return
+                //self.fetchFeatured10Meals()
             }
         }
         
     }
     
     private func fetchLatestMeals (){
-        MealService.shared.getLatestMeals { (result) in
+        MealService.shared.getLatestMeals { [weak self](result) in
+            guard let self = self else { return }
             switch result{
             
             case .success(let meals):
@@ -488,7 +520,8 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
     
     private func featchFeatureArea(){
         //let stringUrl  = "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
-        MealService.shared.getAllArea() { (result) in
+        MealService.shared.getAllArea() {[weak self]  (result) in
+            guard let self = self else { return }
             switch result{
             
             case .success(let areas):
@@ -518,7 +551,8 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
     private func fetchFeaturedCategories(){
         //let categoryUrl = "https://www.themealdb.com/api/json/v1/1/categories.php"
         
-        MealService.shared.getAllCategories() { (result) in
+        MealService.shared.getAllCategories() { [weak self] (result) in
+            guard let self = self else { return }
             switch result{
             
             case .success(let categories):

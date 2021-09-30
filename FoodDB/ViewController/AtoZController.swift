@@ -21,6 +21,15 @@ class AtoZController : UIViewController{
     
     var mealsFilteredByLetter :  [Meal]?
     
+  
+    var noMessageView : NoResultMessage = {
+        let view  =  NoResultMessage()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    
+    
     
     var colletionView :  UICollectionView  = {
         let layout =  UICollectionViewFlowLayout()
@@ -58,6 +67,8 @@ class AtoZController : UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        //self.mainTableView.isHidden = false
+        
     }
     
     private func  setUpCollectionViewLetters (){
@@ -72,10 +83,15 @@ class AtoZController : UIViewController{
     private func setUpContentTableView(){
         mainTableView.dataSource = self
         mainTableView.delegate  = self
+        noMessageView.isHidden = true
+        view.addSubview(noMessageView)
+        noMessageView.anchor(top: colletionView.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
+        //noMessageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
         view.addSubview(mainTableView)
         mainTableView.register(PreviewCellAtoZ.self, forCellReuseIdentifier: identifierContent)
         mainTableView.anchor(top: colletionView.bottomAnchor, left: view.leadingAnchor, right: view.trailingAnchor, bottom: view.bottomAnchor, paddingTop: 10, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: nil, height: nil)
     }
+    
     
 }
 
@@ -111,17 +127,24 @@ extension AtoZController : UICollectionViewDelegate, UICollectionViewDataSource 
     }
     
     private func fetchData(){
-        MealService.shared.getIndividualListLetter(with: currentLetter) { (result) in
+        MealService.shared.getIndividualListLetter(with: currentLetter) { [weak self] (result) in
+            guard let self = self else { return }
             switch result{
             
             case .success(let listLetter):
                 self.mealsFilteredByLetter =  listLetter
                 DispatchQueue.main.async {
+                    //self.mainTableView.isHidden = false
+                    self.mainTableView.isHidden = false
+                    self.noMessageView.isHidden = true
                     self.mainTableView.reloadData()
                 }
             case .failure(let error):
                 self.mealsFilteredByLetter =  []
                 DispatchQueue.main.async {
+                    //self.mainTableView.isHidden = true
+                    self.mainTableView.isHidden = true
+                    self.noMessageView.isHidden = false
                     self.mainTableView.reloadData()
                 }
                 print("Error fetching letter \(error)")
