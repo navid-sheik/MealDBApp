@@ -19,7 +19,7 @@ class HelpController : UIViewController, UINavigationControllerDelegate, MFMailC
     var logo :  UIImageView  = {
         let imageView  = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image =   UIImage(named: "logo2")
+        imageView.image =   UIImage(named: "logoUpdate")
         return imageView
     }()
     
@@ -58,7 +58,7 @@ class HelpController : UIViewController, UINavigationControllerDelegate, MFMailC
     let emailLabel : UILabel  = {
         let label  = UILabel()
         let attributext =  NSMutableAttributedString(string: "Email: ", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14) ])
-        let emailAttributedText  = NSMutableAttributedString(string: "gourmex@gmail.com", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14) ])
+        let emailAttributedText  = NSMutableAttributedString(string: "invictstone@gmail.com", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14) ])
         attributext.append(emailAttributedText)
         label.attributedText =  attributext
         label.numberOfLines =  0
@@ -142,8 +142,8 @@ class HelpController : UIViewController, UINavigationControllerDelegate, MFMailC
             vc.delegate = self
             vc.setSubject("Contact Us/ FeedBack")
             vc.setToRecipients(["navidsheikh54@gmail.com"])
-            vc.setMessageBody("<h1>Hello </h1>", isHTML: true)
-            present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+            vc.setMessageBody("Hello", isHTML: false)
+            present( vc, animated: true, completion: nil)
             
         }
         else{

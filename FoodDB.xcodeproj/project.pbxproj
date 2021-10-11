@@ -16,7 +16,6 @@
 		6D186F5E26B9885C0027D140 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D186F5D26B9885C0027D140 /* MainController.swift */; };
 		6D1BDEC326C475C60076210D /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BDEC226C475C60076210D /* BannerCell.swift */; };
 		6D1BDECB26C47DB20076210D /* FeaturedTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BDECA26C47DB20076210D /* FeaturedTextCell.swift */; };
-		6D1CCB5A26B5A2ED007006A5 /* MainCardSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1CCB5926B5A2ED007006A5 /* MainCardSlider.swift */; };
 		6D1E882B26C9C9D4009770D8 /* CustomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E882A26C9C9D4009770D8 /* CustomMenuBar.swift */; };
 		6D24FE0726B6E9D00052BD55 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D24FE0626B6E9D00052BD55 /* ImageExtension.swift */; };
 		6D285AF626AC4C64007822BA /* IndividualAreaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D285AF526AC4C64007822BA /* IndividualAreaList.swift */; };
@@ -95,7 +94,6 @@
 		6D186F5D26B9885C0027D140 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		6D1BDEC226C475C60076210D /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		6D1BDECA26C47DB20076210D /* FeaturedTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTextCell.swift; sourceTree = "<group>"; };
-		6D1CCB5926B5A2ED007006A5 /* MainCardSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardSlider.swift; sourceTree = "<group>"; };
 		6D1E882A26C9C9D4009770D8 /* CustomMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuBar.swift; sourceTree = "<group>"; };
 		6D24FE0626B6E9D00052BD55 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		6D285AF526AC4C64007822BA /* IndividualAreaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAreaList.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 				6DA95C6726AF5C4E00509F23 /* TagController.swift */,
 				6DB5863726B085C0007FEBE0 /* SingleIngredientController.swift */,
 				6DA95C6C26AF689600509F23 /* MealViewController.swift */,
-				6D1CCB5926B5A2ED007006A5 /* MainCardSlider.swift */,
 				6D186F5D26B9885C0027D140 /* MainController.swift */,
 				6DC30ACA26BD6E7400F7B837 /* MenuController.swift */,
 				6D70A8F626BEBADB00F96F80 /* MealTabController.swift */,
@@ -691,7 +688,6 @@
 				6D2ADF8426D81A2500D0C7D4 /* AboutUsController.swift in Sources */,
 				6DA95C6D26AF689600509F23 /* MealViewController.swift in Sources */,
 				6DA95C6826AF5C4E00509F23 /* TagController.swift in Sources */,
-				6D1CCB5A26B5A2ED007006A5 /* MainCardSlider.swift in Sources */,
 				6D1BDECB26C47DB20076210D /* FeaturedTextCell.swift in Sources */,
 				6D70A91026BEC39F00F96F80 /* MenuToggleProtocol.swift in Sources */,
 				6D2A0AEB26E3FAC700937605 /* NoInternetConnection.swift in Sources */,
@@ -876,13 +872,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5B532CR8XY;
+				DEVELOPMENT_TEAM = YZ4V5CL62F;
 				INFOPLIST_FILE = FoodDB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.navidsheikh.FoodDB;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.invictstone.cheesyy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -896,13 +893,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5B532CR8XY;
+				DEVELOPMENT_TEAM = YZ4V5CL62F;
 				INFOPLIST_FILE = FoodDB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.navidsheikh.FoodDB;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.invictstone.cheesyy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

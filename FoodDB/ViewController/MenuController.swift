@@ -108,7 +108,7 @@ class CustomHeaderForMenu : UICollectionReusableView{
     
     let imageLogo  :  UIImageView =  {
         let imageView  = UIImageView()
-        imageView.image =  UIImage(named: "logo2")?.withRenderingMode(.alwaysTemplate)
+        imageView.image =  UIImage(named: "logov3_white")?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = .white
         imageView.contentMode  = .scaleToFill
         return imageView

@@ -33,6 +33,10 @@ class SingleIngredientController : UIViewController{
             titleIngredient.text = ingredient?.strIngredient
             if  let ingredientDescription  =  ingredient?.strDescription {
                 descriptionINgridient.text =  ingredientDescription
+            }else {
+//                descriptionINgridient.isHidden = true
+//                descriptionScrollView.isHidden = true
+                descriptionScrollView.heightAnchor.constraint(equalToConstant: 0).isActive =  true
             }
            
  

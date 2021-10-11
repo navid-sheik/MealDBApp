@@ -7,8 +7,7 @@ target 'FoodDB' do
 
   # Pods for FoodDB
 
-pod 'TTGTagCollectionView'
-pod 'CardSlider'
+
 pod ‘youtube-ios-player-helper’
 
 	

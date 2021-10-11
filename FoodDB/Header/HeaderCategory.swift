@@ -61,6 +61,7 @@ class Headercategory :  UICollectionReusableView{
     
     let descriptionScrollView :  UIScrollView =  {
         let sv =  UIScrollView()
+        sv.flashScrollIndicators()
         return sv
     }()
     

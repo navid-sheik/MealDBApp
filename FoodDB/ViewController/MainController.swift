@@ -364,7 +364,12 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
             let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! Header
             header.label.text  =   "Featured Meal"
             return header
-        }else if indexPath.section == 5{
+        }else if indexPath.section == 4{
+            let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! Header
+            header.label.text  =   "Categories"
+            return header
+        }
+        else if indexPath.section == 5{
             let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! Header
             header.label.text  =   "Latest Meal"
             return header
@@ -428,6 +433,7 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
     
     private func fetchFeaturedTags(){
         //let stringUrl  = "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
+        featuredIngredients.removeAll()
         MealService.shared.getAllIngridient() { (result) in
             switch result{
             
@@ -492,8 +498,9 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
             
             case .success(let meals):
                 self.featuredRandomMeals =  meals
-                
-                //dispatchGroup.leave()
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }                //dispatchGroup.leave()
             case .failure(let error):
                 return
                 //self.fetchFeatured10Meals()
@@ -520,6 +527,7 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
     
     private func featchFeatureArea(){
         //let stringUrl  = "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
+        featuredAreas.removeAll()
         MealService.shared.getAllArea() {[weak self]  (result) in
             guard let self = self else { return }
             switch result{
@@ -550,13 +558,13 @@ extension MainController :  UICollectionViewDataSource, UICollectionViewDelegate
     
     private func fetchFeaturedCategories(){
         //let categoryUrl = "https://www.themealdb.com/api/json/v1/1/categories.php"
-        
+        featuredCategories.removeAll()
         MealService.shared.getAllCategories() { [weak self] (result) in
             guard let self = self else { return }
             switch result{
             
             case .success(let categories):
-                var categoriesSliced =  categories[0...9]
+                var categoriesSliced =  categories[0...5]
                 self.featuredCategories.append(contentsOf: categoriesSliced)
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()

@@ -7,209 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01FCBA8A7EE361351C67B5152CBBF049 /* CardsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07DBB0B436AAA8992B9A50A08350F6 /* CardsLayout.swift */; };
-		02C00AC33DFDFBE69CF1CEEA4A4676AA /* TTGTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0621A8EC1DEE714B7487C1B279EDF002 /* TTGTagCollectionView.m */; };
-		05DBC5A4A0411FC0868B1355180CD35D /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E5F278DCEEE39092FEB7B1B1C3606935 /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		090B756C9A6BE1D79EF6F35E7B65B7B1 /* TTGTextTagStringContent.h in Headers */ = {isa = PBXBuildFile; fileRef = F5CA3F5546D9F2C266922A9B2EA74F30 /* TTGTextTagStringContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16821772DB2C32EA814EA05C6886177C /* TTGTextTagAttributedStringContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207478622A6F03AE4222F5B1EABC6D1 /* TTGTextTagAttributedStringContent.m */; };
-		17290FC33443075BAF0FC8C9AD5FB5A2 /* CardSlider.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14ED7EE382CA6577D4EC34FF7388A /* CardSlider.bundle */; };
-		1C13E7DAD57262904BD89025EA55F7A4 /* CardSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14992B138E4DD42F7717EEE2FFE52D86 /* CardSlider-dummy.m */; };
-		1CFCD3E6E9128AFAD3AD913F3FF5B289 /* CardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936C0B103DE521A24209A56CF897A48E /* CardTitleView.swift */; };
-		2611C264C2F673FFF92F1799EF6DBAE3 /* Pods-FoodDB-FoodDBUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A402A61DBE02B674C68750C186AAD8C6 /* Pods-FoodDB-FoodDBUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28A78D9846268A9D3DF8CDA0F76D736D /* Pods-FoodDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 116853DDF64BF456E8842631FD053B87 /* Pods-FoodDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BFB2C8191ECC7F1CE6F67FAFB22F794 /* CardSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF34E28350F64A70A7029F1883128301 /* CardSliderCell.swift */; };
-		3F472D62048F9BEBE482D4BD23AAF881 /* TTGTextTagCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = A439A99B77C3580CB9EF3E40FFDF794B /* TTGTextTagCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54C599392C75AFD04C9D3B02FDE30409 /* TTGTextTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 0753C2148D7BE3D2E64B9DE4C0FC5508 /* TTGTextTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FD1AB57DB0721D4F6CF608901FEB103 /* TTGTextTagAttributedStringContent.h in Headers */ = {isa = PBXBuildFile; fileRef = B07528219C4851E4B95D7A063F1BE23D /* TTGTextTagAttributedStringContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		67B667AA41FD375A5DC5335275871853 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		6A347B1D6EC156AEB9B1520DA585A986 /* Pods-FoodDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9ACE8ABA9DDFCE954502F06ACF4220 /* Pods-FoodDB-dummy.m */; };
+		05DBC5A4A0411FC0868B1355180CD35D /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D0B88B1CA58F120B0DD63B31D8F08D /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5311C7198391436A9781716C4F539DBB /* Pods-FoodDB-FoodDBUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EC9A47AEC67D833618C125F15204A /* Pods-FoodDB-FoodDBUITests-dummy.m */; };
 		75EF6E85ADBE14BC3C3D21AB3FD3B06B /* Pods-FoodDBTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E059167D667001B82525205E533713D3 /* Pods-FoodDBTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78CFD71965675BA0F8B849ECDCC2C649 /* TTGTextTagStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF156647917358F5D2F9EF9B70FB88 /* TTGTextTagStyle.m */; };
-		7932EBA8D54C4571E4E3D4B0ACAA71A0 /* CardSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3B17E7CF8EA731A3F71476CD7F1403C /* CardSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D8C05366F87C046219EDCB835447400 /* youtube-ios-player-helper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8B5D89E1732721231B90205F1EF751 /* youtube-ios-player-helper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		850C7D03FC3FF12CC0EDEC8AC95B4388 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80698D7996EEB22590C4066993A828D5 /* RatingView.swift */; };
-		85110AC7B765CECBA1985C9865416D52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		8A8C168707A7BCB611487CD7D2F381DD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528F104E3B357F29E5CFB112A4D520E /* Extensions.swift */; };
-		8AD2AF14442D5E594D0183F9E7C0F881 /* TTGTextTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C00425C289EA29E32B7519695AD1F6 /* TTGTextTag.m */; };
-		93574E2B9421EDA77CDA5F813729A8D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		95360566E941F235D6B8CE1C4C3035D1 /* youtube-ios-player-helper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 717B4496CDC909A72E1CF5A4A51E7BAC /* youtube-ios-player-helper-dummy.m */; };
-		A061B3B61755C9D3AEE52BC15A675443 /* TTGTagCollectionView-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D04756873D41357FC80936A35078B9B /* TTGTagCollectionView-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A66E2E80F97731A99EFE6468E20A0FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F26210D097E896CBEF0D194F73561A /* Main.storyboard */; };
-		A8C22822FA929E89335F959F79BD29D2 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C018ABC73895BC635FADC9D41C65EC29 /* Assets.bundle */; };
-		AC8EAF17B238E2F0176F2D88388474A1 /* TTGTextTagStringContent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7EEEEBC55AF0F494D30D55B258B584 /* TTGTextTagStringContent.m */; };
-		AFC62994FC4E8BBDE0D3F3686A61084D /* TTGTagCollectionView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7BECE981A63A128D0568A0207FC0B7 /* TTGTagCollectionView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7DED9131A9AF648078B695E3D84AE7C /* TTGTextTagContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 466D34A14A759A28ED1EA2B1FAF725C6 /* TTGTextTagContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C6BA0B6B5BF93D01ED16F37921651954 /* TTGTextTagStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CCC08FF705904E4F4F5E776CBA7505C /* TTGTextTagStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD6F285642C2D43CCF5A53D4EC0C2BB1 /* CardSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BC76AC468E155DC25FA40C93786BC /* CardSliderViewController.swift */; };
+		7D8C05366F87C046219EDCB835447400 /* youtube-ios-player-helper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBFE57F92A2BCA45F0B915636C2174B0 /* youtube-ios-player-helper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95360566E941F235D6B8CE1C4C3035D1 /* youtube-ios-player-helper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F5144F9A0A4ADE00B187AF5D85E2BC /* youtube-ios-player-helper-dummy.m */; };
+		961715188AAF13B27E59659F88445C93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A5DE2372321F98F83225A403D945986D /* Pods-FoodDB-FoodDBUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A402A61DBE02B674C68750C186AAD8C6 /* Pods-FoodDB-FoodDBUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8C22822FA929E89335F959F79BD29D2 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7250721FFCCD343A0F32532251AD4810 /* Assets.bundle */; };
+		C1808B2E860ACE508EC4E2058C4A43BD /* Pods-FoodDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 116853DDF64BF456E8842631FD053B87 /* Pods-FoodDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF54FBC044CC3EFEC4309420EE774826 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		D03B6BD25AEC918C55C1A092C4ED472B /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8996A8A4D06F2532DE0DE81D26AD20 /* YTPlayerView.m */; };
+		D03B6BD25AEC918C55C1A092C4ED472B /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A952A9049E5998128388F9E5A4CC4 /* YTPlayerView.m */; };
+		D78A35A0345B0C3E3E1214B121543A97 /* Pods-FoodDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9ACE8ABA9DDFCE954502F06ACF4220 /* Pods-FoodDB-dummy.m */; };
 		D9A253BE07CEBFF9D2C917CBA58C9FD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		DF8907F59BEF751015DBF1D0A47E6234 /* TTGTextTagContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FBE4D1960284CE5D254DA033CB6D58 /* TTGTextTagContent.m */; };
-		E244C3D33433DBD6F4F9E73F4F76D83C /* TTGTagCollectionView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED53B7774E74A7F6247BF65E305E03B1 /* TTGTagCollectionView-dummy.m */; };
-		E9E5C89FC368769660849D54FBA448BA /* Pods-FoodDB-FoodDBUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EC9A47AEC67D833618C125F15204A /* Pods-FoodDB-FoodDBUITests-dummy.m */; };
-		F094B006A4EF3D1E65D4BFAF14B40B07 /* TTGTagCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = BB97884C90F1FF03B2B528D6B2670FF9 /* TTGTagCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7D59F1C88C20328CB9EB37F1D0666BA /* Pods-FoodDBTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4EF6D3B5EF6A1461F8BB386D74FFDA /* Pods-FoodDBTests-dummy.m */; };
-		F8CDE9F031FED27D526B98A0917CD965 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		FFDBD99B1FAAA03625E23ED33A87E951 /* TTGTextTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 347D6D59B4EB6ADD0F9C99A833EDDE11 /* TTGTextTagCollectionView.m */; };
+		FA39B418A90D8EDC0B0164457F813888 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1898EF1F9C0D49CA917846522DB25D1C /* PBXContainerItemProxy */ = {
+		5B096B8F4DE0A63D1ED2978D13431F8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D1A7AF186BE136DE56FD5699070589B8;
 			remoteInfo = "youtube-ios-player-helper";
 		};
-		26AF434A01AD278648085CE7050A202C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B483472F6440590861262522FEBEA49F;
-			remoteInfo = "CardSlider-CardSlider";
-		};
-		542BC608D759BB27B5F173D9AB9DE888 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4949B35B65C78C4D7DCBEEA66EC61D4;
-			remoteInfo = TTGTagCollectionView;
-		};
-		5AC77BDBF31A3AFA89C6F9A5C9BC8CED /* PBXContainerItemProxy */ = {
+		75963C5C5242CF164CF1925B49911903 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D1A7AF186BE136DE56FD5699070589B8;
 			remoteInfo = "youtube-ios-player-helper";
 		};
-		658294BAACFE8FE18F64767EBC92E6A7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4949B35B65C78C4D7DCBEEA66EC61D4;
-			remoteInfo = TTGTagCollectionView;
-		};
-		6EB0DFCE301796EAFB5CBB9D4174C245 /* PBXContainerItemProxy */ = {
+		E4DD0EA5B51F59F8561AE2F946A6094C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0D9EBFBC951DCA66019E2B6D4FCBF0F1;
 			remoteInfo = "Pods-FoodDB";
 		};
-		C3C1FC91510C791BBD07DC3D0657FEB7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D11B0D1A6986453F8B1B1BACDA442BBA;
-			remoteInfo = CardSlider;
-		};
-		C65A037A72D6F9D3F954AED644253474 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D11B0D1A6986453F8B1B1BACDA442BBA;
-			remoteInfo = CardSlider;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0018B55DF23CCCF45405B4DFDA8AD31D /* Pods-FoodDBTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FoodDBTests-Info.plist"; sourceTree = "<group>"; };
 		052373C80B3F2D5F7BEC1A4DF8E99FE6 /* Pods-FoodDB-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FoodDB-frameworks.sh"; sourceTree = "<group>"; };
-		0621A8EC1DEE714B7487C1B279EDF002 /* TTGTagCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTGTagCollectionView.m; path = Sources/BaseTag/TTGTagCollectionView.m; sourceTree = "<group>"; };
-		0753C2148D7BE3D2E64B9DE4C0FC5508 /* TTGTextTag.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTGTextTag.h; path = Sources/TextTag/Tag/TTGTextTag.h; sourceTree = "<group>"; };
 		08E1FAE14346E52F6F501EB226459002 /* Pods-FoodDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FoodDB.modulemap"; sourceTree = "<group>"; };
-		08FBE4D1960284CE5D254DA033CB6D58 /* TTGTextTagContent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTGTextTagContent.m; path = Sources/TextTag/Tag/Content/TTGTextTagContent.m; sourceTree = "<group>"; };
-		09F26210D097E896CBEF0D194F73561A /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Main.storyboard; path = CardSlider/CardSlider/Private/Main.storyboard; sourceTree = "<group>"; };
-		0CCC08FF705904E4F4F5E776CBA7505C /* TTGTextTagStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTGTextTagStyle.h; path = Sources/TextTag/Tag/Style/TTGTextTagStyle.h; sourceTree = "<group>"; };
 		0E96C4F045774BDBB9D72AF68E003DFF /* Pods-FoodDB-FoodDBUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FoodDB-FoodDBUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		116853DDF64BF456E8842631FD053B87 /* Pods-FoodDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FoodDB-umbrella.h"; sourceTree = "<group>"; };
-		14992B138E4DD42F7717EEE2FFE52D86 /* CardSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CardSlider-dummy.m"; sourceTree = "<group>"; };
-		1C8996A8A4D06F2532DE0DE81D26AD20 /* YTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = Classes/YTPlayerView.m; sourceTree = "<group>"; };
-		23C00425C289EA29E32B7519695AD1F6 /* TTGTextTag.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTGTextTag.m; path = Sources/TextTag/Tag/TTGTextTag.m; sourceTree = "<group>"; };
+		19FA673E25BCD2E4336574B408D60C21 /* youtube-ios-player-helper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-prefix.pch"; sourceTree = "<group>"; };
 		2F89E9B1762A1E4734C77FDD00811852 /* Pods-FoodDB-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FoodDB-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3207478622A6F03AE4222F5B1EABC6D1 /* TTGTextTagAttributedStringContent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTGTextTagAttributedStringContent.m; path = Sources/TextTag/Tag/Content/TTGTextTagAttributedStringContent.m; sourceTree = "<group>"; };
-		347D6D59B4EB6ADD0F9C99A833EDDE11 /* TTGTextTagCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTGTextTagCollectionView.m; path = Sources/TextTag/TTGTextTagCollectionView.m; sourceTree = "<group>"; };
+		3538ACB60FE4B3D20C7615A0F6EFC83F /* youtube-ios-player-helper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "youtube-ios-player-helper-Info.plist"; sourceTree = "<group>"; };
 		35629A2C06067EC08F9D6294E4FB9E30 /* Pods-FoodDB-FoodDBUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FoodDB-FoodDBUITests.modulemap"; sourceTree = "<group>"; };
-		36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TTGTagCollectionView.framework; path = TTGTagCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		389EAF2D8B4AA12005777DFF85B0918A /* Pods-FoodDB-FoodDBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoodDB-FoodDBUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B4EF6D3B5EF6A1461F8BB386D74FFDA /* Pods-FoodDBTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FoodDBTests-dummy.m"; sourceTree = "<group>"; };
 		3E9ACE8ABA9DDFCE954502F06ACF4220 /* Pods-FoodDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FoodDB-dummy.m"; sourceTree = "<group>"; };
-		4587ABA16E0C3CC9B55B38B246793827 /* ResourceBundle-CardSlider-CardSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CardSlider-CardSlider-Info.plist"; sourceTree = "<group>"; };
-		4651B143D27D4D48A34633705455ED5B /* youtube-ios-player-helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.release.xcconfig"; sourceTree = "<group>"; };
-		466D34A14A759A28ED1EA2B1FAF725C6 /* TTGTextTagContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTGTextTagContent.h; path = Sources/TextTag/Tag/Content/TTGTextTagContent.h; sourceTree = "<group>"; };
-		48EFBCC22C4500D1B8E4041AB1A5A6F7 /* youtube-ios-player-helper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "youtube-ios-player-helper-Info.plist"; sourceTree = "<group>"; };
-		4C7BECE981A63A128D0568A0207FC0B7 /* TTGTagCollectionView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTGTagCollectionView-umbrella.h"; sourceTree = "<group>"; };
+		3F8A952A9049E5998128388F9E5A4CC4 /* YTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = Classes/YTPlayerView.m; sourceTree = "<group>"; };
 		4C7EC9A47AEC67D833618C125F15204A /* Pods-FoodDB-FoodDBUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FoodDB-FoodDBUITests-dummy.m"; sourceTree = "<group>"; };
-		5491191BF6A5785FD6C6E6107694A6F2 /* TTGTagCollectionView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TTGTagCollectionView.modulemap; sourceTree = "<group>"; };
+		51F5144F9A0A4ADE00B187AF5D85E2BC /* youtube-ios-player-helper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "youtube-ios-player-helper-dummy.m"; sourceTree = "<group>"; };
 		58BA3B1B1DA31DA4326401B541799C2F /* Pods-FoodDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoodDB.debug.xcconfig"; sourceTree = "<group>"; };
 		5FABAB1F096068E7D258CC4C66990318 /* Pods-FoodDB-FoodDBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoodDB-FoodDBUITests.release.xcconfig"; sourceTree = "<group>"; };
 		618E8DF1CA5AC941C6AD02D569A95518 /* Pods-FoodDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoodDBTests.debug.xcconfig"; sourceTree = "<group>"; };
-		63FBC7E5F85502827DD347BCDA45AD2B /* youtube-ios-player-helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.debug.xcconfig"; sourceTree = "<group>"; };
 		64DBA3FA36B6905DF2DA1128FD97D216 /* Pods-FoodDB-FoodDBUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FoodDB-FoodDBUITests-frameworks.sh"; sourceTree = "<group>"; };
 		6746A3979712B9D754EEBD11F327E0EE /* Pods_FoodDB_FoodDBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FoodDB_FoodDBUITests.framework; path = "Pods-FoodDB-FoodDBUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D04756873D41357FC80936A35078B9B /* TTGTagCollectionView-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TTGTagCollectionView-Bridging-Header.h"; path = "Sources/TTGTagCollectionView-Bridging-Header.h"; sourceTree = "<group>"; };
-		6DB79F8971E864B4ABED1F7860F25DC0 /* CardSlider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CardSlider.release.xcconfig; sourceTree = "<group>"; };
-		717B4496CDC909A72E1CF5A4A51E7BAC /* youtube-ios-player-helper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "youtube-ios-player-helper-dummy.m"; sourceTree = "<group>"; };
+		6A4B950EB3E87B480993177716DB4793 /* youtube-ios-player-helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.release.xcconfig"; sourceTree = "<group>"; };
+		7250721FFCCD343A0F32532251AD4810 /* Assets.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Assets.bundle; path = "youtube-ios-player-helper/Assets.bundle"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		80698D7996EEB22590C4066993A828D5 /* RatingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RatingView.swift; path = CardSlider/CardSlider/Private/RatingView.swift; sourceTree = "<group>"; };
 		8498A1B2C60117E181CA67921DDAE0B6 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = youtube_ios_player_helper.framework; path = "youtube-ios-player-helper.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8585AC7A5D10C7B7BEFA75F7FF645409 /* Pods-FoodDB-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FoodDB-Info.plist"; sourceTree = "<group>"; };
-		86F8BD9E19DC44E6BCABD49A824FE9A1 /* TTGTagCollectionView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TTGTagCollectionView-Info.plist"; sourceTree = "<group>"; };
-		8B0AEDBA20D2379DD7F5D257F207217E /* CardSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CardSlider.modulemap; sourceTree = "<group>"; };
-		8BE14ED7EE382CA6577D4EC34FF7388A /* CardSlider.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CardSlider.bundle; path = "CardSlider-CardSlider.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CD56847F028FCAA6F8515E5D60C735E /* youtube-ios-player-helper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-prefix.pch"; sourceTree = "<group>"; };
-		8EFF156647917358F5D2F9EF9B70FB88 /* TTGTextTagStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTGTextTagStyle.m; path = Sources/TextTag/Tag/Style/TTGTextTagStyle.m; sourceTree = "<group>"; };
-		936C0B103DE521A24209A56CF897A48E /* CardTitleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardTitleView.swift; path = CardSlider/CardSlider/Public/CardTitleView.swift; sourceTree = "<group>"; };
-		95BE09036B96F4E517C802E75B4793DD /* TTGTagCollectionView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTGTagCollectionView-prefix.pch"; sourceTree = "<group>"; };
 		9AFD018105122DC701585AB04462BF5D /* Pods-FoodDBTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FoodDBTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0007F87B7447A7E807093EE35AE2658 /* Pods-FoodDBTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FoodDBTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A402A61DBE02B674C68750C186AAD8C6 /* Pods-FoodDB-FoodDBUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FoodDB-FoodDBUITests-umbrella.h"; sourceTree = "<group>"; };
-		A439A99B77C3580CB9EF3E40FFDF794B /* TTGTextTagCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTGTextTagCollectionView.h; path = Sources/TextTag/TTGTextTagCollectionView.h; sourceTree = "<group>"; };
-		A528F104E3B357F29E5CFB112A4D520E /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = CardSlider/CardSlider/Private/Extensions.swift; sourceTree = "<group>"; };
-		A8888FEC275E8299BE4BAA80B443F175 /* TTGTagCollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTGTagCollectionView.release.xcconfig; sourceTree = "<group>"; };
-		B07528219C4851E4B95D7A063F1BE23D /* TTGTextTagAttributedStringContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTGTextTagAttributedStringContent.h; path = Sources/TextTag/Tag/Content/TTGTextTagAttributedStringContent.h; sourceTree = "<group>"; };
 		B47D18F332E218D8DD55101DA1852590 /* Pods-FoodDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoodDB.release.xcconfig"; sourceTree = "<group>"; };
-		BB97884C90F1FF03B2B528D6B2670FF9 /* TTGTagCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTGTagCollectionView.h; path = Sources/BaseTag/TTGTagCollectionView.h; sourceTree = "<group>"; };
-		BC8B5D89E1732721231B90205F1EF751 /* youtube-ios-player-helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-umbrella.h"; sourceTree = "<group>"; };
-		C018ABC73895BC635FADC9D41C65EC29 /* Assets.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Assets.bundle; path = "youtube-ios-player-helper/Assets.bundle"; sourceTree = "<group>"; };
-		C3B17E7CF8EA731A3F71476CD7F1403C /* CardSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CardSlider-umbrella.h"; sourceTree = "<group>"; };
 		C5DFC0C9894DA9E9718BB611D6017C95 /* Pods-FoodDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FoodDBTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8680D8DAC262C7C9B9DF16E0D658A33 /* Pods-FoodDB-FoodDBUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FoodDB-FoodDBUITests-Info.plist"; sourceTree = "<group>"; };
 		CB7BCD3E4AAC652112D6B64D2ACC3767 /* Pods_FoodDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FoodDBTests.framework; path = "Pods-FoodDBTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFA7FD2E882D7FE4722F6EB0F280C9EE /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
+		D1D0B88B1CA58F120B0DD63B31D8F08D /* YTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Classes/YTPlayerView.h; sourceTree = "<group>"; };
 		D30CDCEEF7599B2B8CC8DF180A170DE2 /* Pods-FoodDBTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FoodDBTests.modulemap"; sourceTree = "<group>"; };
 		D380C5BB016F5570D6FEA7B0E001F0C5 /* Pods_FoodDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FoodDB.framework; path = "Pods-FoodDB.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB23562F1CE13025BB0B19869D5BA219 /* Pods-FoodDB-FoodDBUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FoodDB-FoodDBUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E059167D667001B82525205E533713D3 /* Pods-FoodDBTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FoodDBTests-umbrella.h"; sourceTree = "<group>"; };
-		E1FEC6E104E93275EC614ACA84C58B2B /* CardSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CardSlider-Info.plist"; sourceTree = "<group>"; };
-		E5F278DCEEE39092FEB7B1B1C3606935 /* YTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Classes/YTPlayerView.h; sourceTree = "<group>"; };
-		ED07DBB0B436AAA8992B9A50A08350F6 /* CardsLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardsLayout.swift; path = CardSlider/CardSlider/Private/CardsLayout.swift; sourceTree = "<group>"; };
-		ED53B7774E74A7F6247BF65E305E03B1 /* TTGTagCollectionView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTGTagCollectionView-dummy.m"; sourceTree = "<group>"; };
-		EE7EEEEBC55AF0F494D30D55B258B584 /* TTGTextTagStringContent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTGTextTagStringContent.m; path = Sources/TextTag/Tag/Content/TTGTextTagStringContent.m; sourceTree = "<group>"; };
-		EF81FE7FCA7DDB5CBE9366C6E2178F7E /* CardSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CardSlider.framework; path = CardSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F155712850788D446820DE535D78A0BA /* TTGTagCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTGTagCollectionView.debug.xcconfig; sourceTree = "<group>"; };
-		F164F2B85DD8BD05613923C39CF878D8 /* CardSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CardSlider-prefix.pch"; sourceTree = "<group>"; };
-		F5CA3F5546D9F2C266922A9B2EA74F30 /* TTGTextTagStringContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTGTextTagStringContent.h; path = Sources/TextTag/Tag/Content/TTGTextTagStringContent.h; sourceTree = "<group>"; };
+		EACC01C0D31634219D4F5FB894392444 /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
+		F1DC84EB8856FDEA9DD1F830AC0B520D /* youtube-ios-player-helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AC2C4F1EE0BF4557529E0BA3FD468A /* Pods-FoodDB-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FoodDB-acknowledgements.plist"; sourceTree = "<group>"; };
-		FB9BC76AC468E155DC25FA40C93786BC /* CardSliderViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardSliderViewController.swift; path = CardSlider/CardSlider/Public/CardSliderViewController.swift; sourceTree = "<group>"; };
-		FE4808453508EFAD37C5D2ABE8799948 /* CardSlider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CardSlider.debug.xcconfig; sourceTree = "<group>"; };
-		FF34E28350F64A70A7029F1883128301 /* CardSliderCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardSliderCell.swift; path = CardSlider/CardSlider/Public/CardSliderCell.swift; sourceTree = "<group>"; };
+		FBFE57F92A2BCA45F0B915636C2174B0 /* youtube-ios-player-helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0A683C4B334C5309D7D6CFC876552FA1 /* Frameworks */ = {
+		138A6DA63C0381F2B8A286F56F85E2A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93574E2B9421EDA77CDA5F813729A8D6 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D22844A2B0F3586B0B136D28D2B29F9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				FA39B418A90D8EDC0B0164457F813888 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +110,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		71B7608643440F453E4D55FCE1463644 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8CDE9F031FED27D526B98A0917CD965 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8CD65E1D6EC810B0035B794B40791488 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,19 +118,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7976B6B8534C907A3DBA4EEF2012815 /* Frameworks */ = {
+		DA9A9D2880B2CD5C1F3DA14B5C7A9711 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67B667AA41FD375A5DC5335275871853 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E135A82DA563B7327CCF20135A29BFDB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				85110AC7B765CECBA1985C9865416D52 /* Foundation.framework in Frameworks */,
+				961715188AAF13B27E59659F88445C93 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,28 +163,19 @@
 			path = "Target Support Files/Pods-FoodDB";
 			sourceTree = "<group>";
 		};
-		3CFF29EBBD6A39FF1B6AE9F5557B7684 /* Resources */ = {
+		4360E8923BCCAA590FD4DE7549B35674 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C018ABC73895BC635FADC9D41C65EC29 /* Assets.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		52DC97866D52A2E30BE25FD24724C9D4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8B0AEDBA20D2379DD7F5D257F207217E /* CardSlider.modulemap */,
-				14992B138E4DD42F7717EEE2FFE52D86 /* CardSlider-dummy.m */,
-				E1FEC6E104E93275EC614ACA84C58B2B /* CardSlider-Info.plist */,
-				F164F2B85DD8BD05613923C39CF878D8 /* CardSlider-prefix.pch */,
-				C3B17E7CF8EA731A3F71476CD7F1403C /* CardSlider-umbrella.h */,
-				FE4808453508EFAD37C5D2ABE8799948 /* CardSlider.debug.xcconfig */,
-				6DB79F8971E864B4ABED1F7860F25DC0 /* CardSlider.release.xcconfig */,
-				4587ABA16E0C3CC9B55B38B246793827 /* ResourceBundle-CardSlider-CardSlider-Info.plist */,
+				EACC01C0D31634219D4F5FB894392444 /* youtube-ios-player-helper.modulemap */,
+				51F5144F9A0A4ADE00B187AF5D85E2BC /* youtube-ios-player-helper-dummy.m */,
+				3538ACB60FE4B3D20C7615A0F6EFC83F /* youtube-ios-player-helper-Info.plist */,
+				19FA673E25BCD2E4336574B408D60C21 /* youtube-ios-player-helper-prefix.pch */,
+				FBFE57F92A2BCA45F0B915636C2174B0 /* youtube-ios-player-helper-umbrella.h */,
+				F1DC84EB8856FDEA9DD1F830AC0B520D /* youtube-ios-player-helper.debug.xcconfig */,
+				6A4B950EB3E87B480993177716DB4793 /* youtube-ios-player-helper.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/CardSlider";
+			path = "../Target Support Files/youtube-ios-player-helper";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -322,90 +186,43 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		789FD2A8D5146AC5743C3E9C12DBFE46 /* TTGTagCollectionView */ = {
+		6A928FDE4E2B19B2F70560D23FE57B58 /* youtube-ios-player-helper */ = {
 			isa = PBXGroup;
 			children = (
-				BB97884C90F1FF03B2B528D6B2670FF9 /* TTGTagCollectionView.h */,
-				0621A8EC1DEE714B7487C1B279EDF002 /* TTGTagCollectionView.m */,
-				6D04756873D41357FC80936A35078B9B /* TTGTagCollectionView-Bridging-Header.h */,
-				0753C2148D7BE3D2E64B9DE4C0FC5508 /* TTGTextTag.h */,
-				23C00425C289EA29E32B7519695AD1F6 /* TTGTextTag.m */,
-				B07528219C4851E4B95D7A063F1BE23D /* TTGTextTagAttributedStringContent.h */,
-				3207478622A6F03AE4222F5B1EABC6D1 /* TTGTextTagAttributedStringContent.m */,
-				A439A99B77C3580CB9EF3E40FFDF794B /* TTGTextTagCollectionView.h */,
-				347D6D59B4EB6ADD0F9C99A833EDDE11 /* TTGTextTagCollectionView.m */,
-				466D34A14A759A28ED1EA2B1FAF725C6 /* TTGTextTagContent.h */,
-				08FBE4D1960284CE5D254DA033CB6D58 /* TTGTextTagContent.m */,
-				F5CA3F5546D9F2C266922A9B2EA74F30 /* TTGTextTagStringContent.h */,
-				EE7EEEEBC55AF0F494D30D55B258B584 /* TTGTextTagStringContent.m */,
-				0CCC08FF705904E4F4F5E776CBA7505C /* TTGTextTagStyle.h */,
-				8EFF156647917358F5D2F9EF9B70FB88 /* TTGTextTagStyle.m */,
-				98B826FE3DEA1B21A0C8A195EDA5939C /* Support Files */,
+				D1D0B88B1CA58F120B0DD63B31D8F08D /* YTPlayerView.h */,
+				3F8A952A9049E5998128388F9E5A4CC4 /* YTPlayerView.m */,
+				AF19A57942DDA4DEFB3D4249E2416ED2 /* Resources */,
+				4360E8923BCCAA590FD4DE7549B35674 /* Support Files */,
 			);
-			name = TTGTagCollectionView;
-			path = TTGTagCollectionView;
+			name = "youtube-ios-player-helper";
+			path = "youtube-ios-player-helper";
 			sourceTree = "<group>";
 		};
-		87B8C52B2702F7E100FD3C37113FF503 /* Products */ = {
+		7E82C774E6F33AA2A504913032DF4E3D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8BE14ED7EE382CA6577D4EC34FF7388A /* CardSlider.bundle */,
-				EF81FE7FCA7DDB5CBE9366C6E2178F7E /* CardSlider.framework */,
+				6A928FDE4E2B19B2F70560D23FE57B58 /* youtube-ios-player-helper */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B164632CB5BFBA6066870DBDE463CD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
 				D380C5BB016F5570D6FEA7B0E001F0C5 /* Pods_FoodDB.framework */,
 				6746A3979712B9D754EEBD11F327E0EE /* Pods_FoodDB_FoodDBUITests.framework */,
 				CB7BCD3E4AAC652112D6B64D2ACC3767 /* Pods_FoodDBTests.framework */,
-				36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView.framework */,
 				8498A1B2C60117E181CA67921DDAE0B6 /* youtube_ios_player_helper.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		98B826FE3DEA1B21A0C8A195EDA5939C /* Support Files */ = {
+		AF19A57942DDA4DEFB3D4249E2416ED2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5491191BF6A5785FD6C6E6107694A6F2 /* TTGTagCollectionView.modulemap */,
-				ED53B7774E74A7F6247BF65E305E03B1 /* TTGTagCollectionView-dummy.m */,
-				86F8BD9E19DC44E6BCABD49A824FE9A1 /* TTGTagCollectionView-Info.plist */,
-				95BE09036B96F4E517C802E75B4793DD /* TTGTagCollectionView-prefix.pch */,
-				4C7BECE981A63A128D0568A0207FC0B7 /* TTGTagCollectionView-umbrella.h */,
-				F155712850788D446820DE535D78A0BA /* TTGTagCollectionView.debug.xcconfig */,
-				A8888FEC275E8299BE4BAA80B443F175 /* TTGTagCollectionView.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TTGTagCollectionView";
-			sourceTree = "<group>";
-		};
-		A83DF553C4A67A86383478FD5DCD102D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CFA7FD2E882D7FE4722F6EB0F280C9EE /* youtube-ios-player-helper.modulemap */,
-				717B4496CDC909A72E1CF5A4A51E7BAC /* youtube-ios-player-helper-dummy.m */,
-				48EFBCC22C4500D1B8E4041AB1A5A6F7 /* youtube-ios-player-helper-Info.plist */,
-				8CD56847F028FCAA6F8515E5D60C735E /* youtube-ios-player-helper-prefix.pch */,
-				BC8B5D89E1732721231B90205F1EF751 /* youtube-ios-player-helper-umbrella.h */,
-				63FBC7E5F85502827DD347BCDA45AD2B /* youtube-ios-player-helper.debug.xcconfig */,
-				4651B143D27D4D48A34633705455ED5B /* youtube-ios-player-helper.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/youtube-ios-player-helper";
-			sourceTree = "<group>";
-		};
-		BBF36F42C2C129A1A0A1C3298932D585 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				09F26210D097E896CBEF0D194F73561A /* Main.storyboard */,
+				7250721FFCCD343A0F32532251AD4810 /* Assets.bundle */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		C9517DC401DC6575064185347FD1A2B0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EBA9DDEE60F6CEA27D8F9D768D98E54F /* CardSlider */,
-				789FD2A8D5146AC5743C3E9C12DBFE46 /* TTGTagCollectionView */,
-				FACD961675C8E959477820A3A1EEE977 /* youtube-ios-player-helper */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -413,8 +230,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				C9517DC401DC6575064185347FD1A2B0 /* Pods */,
-				87B8C52B2702F7E100FD3C37113FF503 /* Products */,
+				7E82C774E6F33AA2A504913032DF4E3D /* Pods */,
+				9B164632CB5BFBA6066870DBDE463CD3 /* Products */,
 				F250EFFE76EC377F3DF0BFF2EFBBA05A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -443,22 +260,6 @@
 			path = "Target Support Files/Pods-FoodDBTests";
 			sourceTree = "<group>";
 		};
-		EBA9DDEE60F6CEA27D8F9D768D98E54F /* CardSlider */ = {
-			isa = PBXGroup;
-			children = (
-				ED07DBB0B436AAA8992B9A50A08350F6 /* CardsLayout.swift */,
-				FF34E28350F64A70A7029F1883128301 /* CardSliderCell.swift */,
-				FB9BC76AC468E155DC25FA40C93786BC /* CardSliderViewController.swift */,
-				936C0B103DE521A24209A56CF897A48E /* CardTitleView.swift */,
-				A528F104E3B357F29E5CFB112A4D520E /* Extensions.swift */,
-				80698D7996EEB22590C4066993A828D5 /* RatingView.swift */,
-				BBF36F42C2C129A1A0A1C3298932D585 /* Resources */,
-				52DC97866D52A2E30BE25FD24724C9D4 /* Support Files */,
-			);
-			name = CardSlider;
-			path = CardSlider;
-			sourceTree = "<group>";
-		};
 		F250EFFE76EC377F3DF0BFF2EFBBA05A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,37 +270,9 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FACD961675C8E959477820A3A1EEE977 /* youtube-ios-player-helper */ = {
-			isa = PBXGroup;
-			children = (
-				E5F278DCEEE39092FEB7B1B1C3606935 /* YTPlayerView.h */,
-				1C8996A8A4D06F2532DE0DE81D26AD20 /* YTPlayerView.m */,
-				3CFF29EBBD6A39FF1B6AE9F5557B7684 /* Resources */,
-				A83DF553C4A67A86383478FD5DCD102D /* Support Files */,
-			);
-			name = "youtube-ios-player-helper";
-			path = "youtube-ios-player-helper";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		05AFA9683854A122F01484CC7110CB3C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A061B3B61755C9D3AEE52BC15A675443 /* TTGTagCollectionView-Bridging-Header.h in Headers */,
-				AFC62994FC4E8BBDE0D3F3686A61084D /* TTGTagCollectionView-umbrella.h in Headers */,
-				F094B006A4EF3D1E65D4BFAF14B40B07 /* TTGTagCollectionView.h in Headers */,
-				54C599392C75AFD04C9D3B02FDE30409 /* TTGTextTag.h in Headers */,
-				5FD1AB57DB0721D4F6CF608901FEB103 /* TTGTextTagAttributedStringContent.h in Headers */,
-				3F472D62048F9BEBE482D4BD23AAF881 /* TTGTextTagCollectionView.h in Headers */,
-				B7DED9131A9AF648078B695E3D84AE7C /* TTGTextTagContent.h in Headers */,
-				090B756C9A6BE1D79EF6F35E7B65B7B1 /* TTGTextTagStringContent.h in Headers */,
-				C6BA0B6B5BF93D01ED16F37921651954 /* TTGTextTagStyle.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		435325CDEF5E0ED509DFABB19EA2413E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,19 +281,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4433CC4DACD158EABE11B383CFEE4A58 /* Headers */ = {
+		7B35EAC9FD57260EFC65F31AEED88C77 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2611C264C2F673FFF92F1799EF6DBAE3 /* Pods-FoodDB-FoodDBUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A247CFE2245E2C3857CC26A8F46B168C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7932EBA8D54C4571E4E3D4B0ACAA71A0 /* CardSlider-umbrella.h in Headers */,
+				C1808B2E860ACE508EC4E2058C4A43BD /* Pods-FoodDB-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,11 +298,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0185988AFA9C3EE27254094F69DF028 /* Headers */ = {
+		CA08E152D6D0FF74A606DE830D358ADB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28A78D9846268A9D3DF8CDA0F76D736D /* Pods-FoodDB-umbrella.h in Headers */,
+				A5DE2372321F98F83225A403D945986D /* Pods-FoodDB-FoodDBUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,19 +311,17 @@
 /* Begin PBXNativeTarget section */
 		0D9EBFBC951DCA66019E2B6D4FCBF0F1 /* Pods-FoodDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA47B704FA4AF76E196C85543B24B7CE /* Build configuration list for PBXNativeTarget "Pods-FoodDB" */;
+			buildConfigurationList = 9AC139D143F28321BF02B7546CD50DA2 /* Build configuration list for PBXNativeTarget "Pods-FoodDB" */;
 			buildPhases = (
-				E0185988AFA9C3EE27254094F69DF028 /* Headers */,
-				ED1E340AEC9F5DDDB1EF19E9CF9F5037 /* Sources */,
-				E135A82DA563B7327CCF20135A29BFDB /* Frameworks */,
-				2B8675F5C6E96160F19D72216DDD5A1D /* Resources */,
+				7B35EAC9FD57260EFC65F31AEED88C77 /* Headers */,
+				65D1FA0ABDD3C960D5C10557BC80D3C8 /* Sources */,
+				DA9A9D2880B2CD5C1F3DA14B5C7A9711 /* Frameworks */,
+				DCF9CD82CBB30EF578DD1DC16E5436E6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DAD5443B5B0944C9268D9F845E1595ED /* PBXTargetDependency */,
-				5F11F7D30C2C2B7F9257EA01A411A122 /* PBXTargetDependency */,
-				24D05DA2D027EA948452559690CE394E /* PBXTargetDependency */,
+				10D657938BAC32E98E07B88C0DB76333 /* PBXTargetDependency */,
 			);
 			name = "Pods-FoodDB";
 			productName = "Pods-FoodDB";
@@ -577,47 +340,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				35D2EE3DB960B002020F3B48B1C1D625 /* PBXTargetDependency */,
+				E63E4CD2B1F9BD4D616ED669BF1F5A87 /* PBXTargetDependency */,
 			);
 			name = "Pods-FoodDBTests";
 			productName = "Pods-FoodDBTests";
 			productReference = CB7BCD3E4AAC652112D6B64D2ACC3767 /* Pods_FoodDBTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		B483472F6440590861262522FEBEA49F /* CardSlider-CardSlider */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 285ADE375E4DC07CD878C7DA3137C9D8 /* Build configuration list for PBXNativeTarget "CardSlider-CardSlider" */;
-			buildPhases = (
-				B553BE472E8C732EA50E6E1B4BB3CF81 /* Sources */,
-				3D22844A2B0F3586B0B136D28D2B29F9 /* Frameworks */,
-				0901347E5D82F961D684C5980E874ECA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "CardSlider-CardSlider";
-			productName = "CardSlider-CardSlider";
-			productReference = 8BE14ED7EE382CA6577D4EC34FF7388A /* CardSlider.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		D11B0D1A6986453F8B1B1BACDA442BBA /* CardSlider */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E91DBD6E828EAFFFECACD3AD3553751C /* Build configuration list for PBXNativeTarget "CardSlider" */;
-			buildPhases = (
-				A247CFE2245E2C3857CC26A8F46B168C /* Headers */,
-				12AFD3C2928922D0D80B8F750E0D5910 /* Sources */,
-				B7976B6B8534C907A3DBA4EEF2012815 /* Frameworks */,
-				FB4FC1CE9E8E84E41EB478A40503164C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EF4A2DB37C327AFF6005162AA151A6A0 /* PBXTargetDependency */,
-			);
-			name = CardSlider;
-			productName = CardSlider;
-			productReference = EF81FE7FCA7DDB5CBE9366C6E2178F7E /* CardSlider.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */ = {
@@ -638,39 +365,19 @@
 			productReference = 8498A1B2C60117E181CA67921DDAE0B6 /* youtube_ios_player_helper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F4949B35B65C78C4D7DCBEEA66EC61D4 /* TTGTagCollectionView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D9EA604270F8BD2940D600F294FB2645 /* Build configuration list for PBXNativeTarget "TTGTagCollectionView" */;
-			buildPhases = (
-				05AFA9683854A122F01484CC7110CB3C /* Headers */,
-				D0B8422F0898EB3E1C17965BD27C8E85 /* Sources */,
-				0A683C4B334C5309D7D6CFC876552FA1 /* Frameworks */,
-				FD9B8545206A7DCF525BF4C3EBF3301A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TTGTagCollectionView;
-			productName = TTGTagCollectionView;
-			productReference = 36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		F89249D3FF7A70FF6578C0693FA51486 /* Pods-FoodDB-FoodDBUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 920DC453437E3E767013F31D75E89C08 /* Build configuration list for PBXNativeTarget "Pods-FoodDB-FoodDBUITests" */;
+			buildConfigurationList = 528A495C9780B1F92DE6B0B993DADEA2 /* Build configuration list for PBXNativeTarget "Pods-FoodDB-FoodDBUITests" */;
 			buildPhases = (
-				4433CC4DACD158EABE11B383CFEE4A58 /* Headers */,
-				86082ABC1B839221840F703264813876 /* Sources */,
-				71B7608643440F453E4D55FCE1463644 /* Frameworks */,
-				E11BAFE09ED39F36DD54BAFB0AAC80EC /* Resources */,
+				CA08E152D6D0FF74A606DE830D358ADB /* Headers */,
+				9BA4709ADB5D6DE5C22214D28EDF54C5 /* Sources */,
+				138A6DA63C0381F2B8A286F56F85E2A2 /* Frameworks */,
+				1BBB2929F25EEDEC9FC964A7D60EF881 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				80536E0FEFB9D19038B78A0F2169FA8D /* PBXTargetDependency */,
-				FCBC6609F75BA2B27FD028E408F20E97 /* PBXTargetDependency */,
-				4520CB0A8D731A36133F5120DB51C132 /* PBXTargetDependency */,
+				E0A0CBF4A53F9423CF74157FB86D7A6C /* PBXTargetDependency */,
 			);
 			name = "Pods-FoodDB-FoodDBUITests";
 			productName = "Pods-FoodDB-FoodDBUITests";
@@ -695,31 +402,20 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 87B8C52B2702F7E100FD3C37113FF503 /* Products */;
+			productRefGroup = 9B164632CB5BFBA6066870DBDE463CD3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D11B0D1A6986453F8B1B1BACDA442BBA /* CardSlider */,
-				B483472F6440590861262522FEBEA49F /* CardSlider-CardSlider */,
 				0D9EBFBC951DCA66019E2B6D4FCBF0F1 /* Pods-FoodDB */,
 				F89249D3FF7A70FF6578C0693FA51486 /* Pods-FoodDB-FoodDBUITests */,
 				2A28B67FC83784DFDAE7F3FC5B54E05C /* Pods-FoodDBTests */,
-				F4949B35B65C78C4D7DCBEEA66EC61D4 /* TTGTagCollectionView */,
 				D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0901347E5D82F961D684C5980E874ECA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A66E2E80F97731A99EFE6468E20A0FB4 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2B8675F5C6E96160F19D72216DDD5A1D /* Resources */ = {
+		1BBB2929F25EEDEC9FC964A7D60EF881 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -734,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E11BAFE09ED39F36DD54BAFB0AAC80EC /* Resources */ = {
+		DCF9CD82CBB30EF578DD1DC16E5436E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -748,38 +444,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB4FC1CE9E8E84E41EB478A40503164C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17290FC33443075BAF0FC8C9AD5FB5A2 /* CardSlider.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD9B8545206A7DCF525BF4C3EBF3301A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		12AFD3C2928922D0D80B8F750E0D5910 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01FCBA8A7EE361351C67B5152CBBF049 /* CardsLayout.swift in Sources */,
-				1C13E7DAD57262904BD89025EA55F7A4 /* CardSlider-dummy.m in Sources */,
-				3BFB2C8191ECC7F1CE6F67FAFB22F794 /* CardSliderCell.swift in Sources */,
-				CD6F285642C2D43CCF5A53D4EC0C2BB1 /* CardSliderViewController.swift in Sources */,
-				1CFCD3E6E9128AFAD3AD913F3FF5B289 /* CardTitleView.swift in Sources */,
-				8A8C168707A7BCB611487CD7D2F381DD /* Extensions.swift in Sources */,
-				850C7D03FC3FF12CC0EDEC8AC95B4388 /* RatingView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1D0FE5D1FA457436D50E3286E7C355B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -789,18 +456,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		86082ABC1B839221840F703264813876 /* Sources */ = {
+		65D1FA0ABDD3C960D5C10557BC80D3C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9E5C89FC368769660849D54FBA448BA /* Pods-FoodDB-FoodDBUITests-dummy.m in Sources */,
+				D78A35A0345B0C3E3E1214B121543A97 /* Pods-FoodDB-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B553BE472E8C732EA50E6E1B4BB3CF81 /* Sources */ = {
+		9BA4709ADB5D6DE5C22214D28EDF54C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5311C7198391436A9781716C4F539DBB /* Pods-FoodDB-FoodDBUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,79 +480,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0B8422F0898EB3E1C17965BD27C8E85 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E244C3D33433DBD6F4F9E73F4F76D83C /* TTGTagCollectionView-dummy.m in Sources */,
-				02C00AC33DFDFBE69CF1CEEA4A4676AA /* TTGTagCollectionView.m in Sources */,
-				8AD2AF14442D5E594D0183F9E7C0F881 /* TTGTextTag.m in Sources */,
-				16821772DB2C32EA814EA05C6886177C /* TTGTextTagAttributedStringContent.m in Sources */,
-				FFDBD99B1FAAA03625E23ED33A87E951 /* TTGTextTagCollectionView.m in Sources */,
-				DF8907F59BEF751015DBF1D0A47E6234 /* TTGTextTagContent.m in Sources */,
-				AC8EAF17B238E2F0176F2D88388474A1 /* TTGTextTagStringContent.m in Sources */,
-				78CFD71965675BA0F8B849ECDCC2C649 /* TTGTextTagStyle.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED1E340AEC9F5DDDB1EF19E9CF9F5037 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A347B1D6EC156AEB9B1520DA585A986 /* Pods-FoodDB-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		24D05DA2D027EA948452559690CE394E /* PBXTargetDependency */ = {
+		10D657938BAC32E98E07B88C0DB76333 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "youtube-ios-player-helper";
 			target = D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */;
-			targetProxy = 5AC77BDBF31A3AFA89C6F9A5C9BC8CED /* PBXContainerItemProxy */;
+			targetProxy = 5B096B8F4DE0A63D1ED2978D13431F8D /* PBXContainerItemProxy */;
 		};
-		35D2EE3DB960B002020F3B48B1C1D625 /* PBXTargetDependency */ = {
+		E0A0CBF4A53F9423CF74157FB86D7A6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "youtube-ios-player-helper";
+			target = D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */;
+			targetProxy = 75963C5C5242CF164CF1925B49911903 /* PBXContainerItemProxy */;
+		};
+		E63E4CD2B1F9BD4D616ED669BF1F5A87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-FoodDB";
 			target = 0D9EBFBC951DCA66019E2B6D4FCBF0F1 /* Pods-FoodDB */;
-			targetProxy = 6EB0DFCE301796EAFB5CBB9D4174C245 /* PBXContainerItemProxy */;
-		};
-		4520CB0A8D731A36133F5120DB51C132 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "youtube-ios-player-helper";
-			target = D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */;
-			targetProxy = 1898EF1F9C0D49CA917846522DB25D1C /* PBXContainerItemProxy */;
-		};
-		5F11F7D30C2C2B7F9257EA01A411A122 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TTGTagCollectionView;
-			target = F4949B35B65C78C4D7DCBEEA66EC61D4 /* TTGTagCollectionView */;
-			targetProxy = 542BC608D759BB27B5F173D9AB9DE888 /* PBXContainerItemProxy */;
-		};
-		80536E0FEFB9D19038B78A0F2169FA8D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CardSlider;
-			target = D11B0D1A6986453F8B1B1BACDA442BBA /* CardSlider */;
-			targetProxy = C65A037A72D6F9D3F954AED644253474 /* PBXContainerItemProxy */;
-		};
-		DAD5443B5B0944C9268D9F845E1595ED /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CardSlider;
-			target = D11B0D1A6986453F8B1B1BACDA442BBA /* CardSlider */;
-			targetProxy = C3C1FC91510C791BBD07DC3D0657FEB7 /* PBXContainerItemProxy */;
-		};
-		EF4A2DB37C327AFF6005162AA151A6A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "CardSlider-CardSlider";
-			target = B483472F6440590861262522FEBEA49F /* CardSlider-CardSlider */;
-			targetProxy = 26AF434A01AD278648085CE7050A202C /* PBXContainerItemProxy */;
-		};
-		FCBC6609F75BA2B27FD028E408F20E97 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TTGTagCollectionView;
-			target = F4949B35B65C78C4D7DCBEEA66EC61D4 /* TTGTagCollectionView */;
-			targetProxy = 658294BAACFE8FE18F64767EBC92E6A7 /* PBXContainerItemProxy */;
+			targetProxy = E4DD0EA5B51F59F8561AE2F946A6094C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -927,60 +542,6 @@
 			};
 			name = Release;
 		};
-		3EF891F8B0CE72843BD5B8CE9B4B47DB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B47D18F332E218D8DD55101DA1852590 /* Pods-FoodDB.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FoodDB/Pods-FoodDB-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FoodDB/Pods-FoodDB.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		44112D343AE0E6BB6C76B82DE72A4600 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DB79F8971E864B4ABED1F7860F25DC0 /* CardSlider.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CardSlider";
-				IBSC_MODULE = CardSlider;
-				INFOPLIST_FILE = "Target Support Files/CardSlider/ResourceBundle-CardSlider-CardSlider-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = CardSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		4C0DDEF7D3935EF8009917125EFDD534 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 618E8DF1CA5AC941C6AD02D569A95518 /* Pods-FoodDBTests.debug.xcconfig */;
@@ -1018,61 +579,9 @@
 			};
 			name = Debug;
 		};
-		522D505673FAE9E2C7D03FFBD99EBFD3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DB79F8971E864B4ABED1F7860F25DC0 /* CardSlider.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CardSlider/CardSlider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CardSlider/CardSlider-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/CardSlider/CardSlider.modulemap";
-				PRODUCT_MODULE_NAME = CardSlider;
-				PRODUCT_NAME = CardSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5C71A4C1A3A856054EBC4D6B29610C6B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE4808453508EFAD37C5D2ABE8799948 /* CardSlider.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CardSlider";
-				IBSC_MODULE = CardSlider;
-				INFOPLIST_FILE = "Target Support Files/CardSlider/ResourceBundle-CardSlider-CardSlider-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = CardSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		662C3C259C2E0C9A56499E6981E210B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63FBC7E5F85502827DD347BCDA45AD2B /* youtube-ios-player-helper.debug.xcconfig */;
+			baseConfigurationReference = F1DC84EB8856FDEA9DD1F830AC0B520D /* youtube-ios-player-helper.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1099,40 +608,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6DFE8DC4062144F030F0644A8E076396 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F155712850788D446820DE535D78A0BA /* TTGTagCollectionView.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView.modulemap";
-				PRODUCT_MODULE_NAME = TTGTagCollectionView;
-				PRODUCT_NAME = TTGTagCollectionView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1267,187 +742,7 @@
 			};
 			name = Debug;
 		};
-		7BCDB8120BE42ADC1247555984AFE6F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58BA3B1B1DA31DA4326401B541799C2F /* Pods-FoodDB.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FoodDB/Pods-FoodDB-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FoodDB/Pods-FoodDB.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		98A4CE46FE4020509D76ECF7D2A5E703 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8888FEC275E8299BE4BAA80B443F175 /* TTGTagCollectionView.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView.modulemap";
-				PRODUCT_MODULE_NAME = TTGTagCollectionView;
-				PRODUCT_NAME = TTGTagCollectionView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A74281422B46FD0E54F224CACC3F2D7C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 389EAF2D8B4AA12005777DFF85B0918A /* Pods-FoodDB-FoodDBUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FoodDB-FoodDBUITests/Pods-FoodDB-FoodDBUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FoodDB-FoodDBUITests/Pods-FoodDB-FoodDBUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		BB64F5420FB9C8E240944385F9C679AA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4651B143D27D4D48A34633705455ED5B /* youtube-ios-player-helper.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper.modulemap";
-				PRODUCT_MODULE_NAME = youtube_ios_player_helper;
-				PRODUCT_NAME = youtube_ios_player_helper;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CA16DDB58394C2F4663CBEE096CA97B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE4808453508EFAD37C5D2ABE8799948 /* CardSlider.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CardSlider/CardSlider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CardSlider/CardSlider-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/CardSlider/CardSlider.modulemap";
-				PRODUCT_MODULE_NAME = CardSlider;
-				PRODUCT_NAME = CardSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E669E3A86F59A92A620EF03246DF5DA0 /* Release */ = {
+		957F54941761E1BB32924BF9B4B60EFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5FABAB1F096068E7D258CC4C66990318 /* Pods-FoodDB-FoodDBUITests.release.xcconfig */;
 			buildSettings = {
@@ -1485,6 +780,154 @@
 			};
 			name = Release;
 		};
+		B49CDE483BC989E4EA44D26BA7BA2DE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 389EAF2D8B4AA12005777DFF85B0918A /* Pods-FoodDB-FoodDBUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FoodDB-FoodDBUITests/Pods-FoodDB-FoodDBUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FoodDB-FoodDBUITests/Pods-FoodDB-FoodDBUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B69A8C60DFA8BB09986C80CE4653838A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B47D18F332E218D8DD55101DA1852590 /* Pods-FoodDB.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FoodDB/Pods-FoodDB-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FoodDB/Pods-FoodDB.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BB64F5420FB9C8E240944385F9C679AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A4B950EB3E87B480993177716DB4793 /* youtube-ios-player-helper.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper.modulemap";
+				PRODUCT_MODULE_NAME = youtube_ios_player_helper;
+				PRODUCT_NAME = youtube_ios_player_helper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DF48E8C104AFEC0E06D9D5AE02D6484E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58BA3B1B1DA31DA4326401B541799C2F /* Pods-FoodDB.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FoodDB/Pods-FoodDB-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FoodDB/Pods-FoodDB.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1493,15 +936,6 @@
 			buildConfigurations = (
 				662C3C259C2E0C9A56499E6981E210B9 /* Debug */,
 				BB64F5420FB9C8E240944385F9C679AA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		285ADE375E4DC07CD878C7DA3137C9D8 /* Build configuration list for PBXNativeTarget "CardSlider-CardSlider" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5C71A4C1A3A856054EBC4D6B29610C6B /* Debug */,
-				44112D343AE0E6BB6C76B82DE72A4600 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1515,38 +949,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		920DC453437E3E767013F31D75E89C08 /* Build configuration list for PBXNativeTarget "Pods-FoodDB-FoodDBUITests" */ = {
+		528A495C9780B1F92DE6B0B993DADEA2 /* Build configuration list for PBXNativeTarget "Pods-FoodDB-FoodDBUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A74281422B46FD0E54F224CACC3F2D7C /* Debug */,
-				E669E3A86F59A92A620EF03246DF5DA0 /* Release */,
+				B49CDE483BC989E4EA44D26BA7BA2DE7 /* Debug */,
+				957F54941761E1BB32924BF9B4B60EFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9EA604270F8BD2940D600F294FB2645 /* Build configuration list for PBXNativeTarget "TTGTagCollectionView" */ = {
+		9AC139D143F28321BF02B7546CD50DA2 /* Build configuration list for PBXNativeTarget "Pods-FoodDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6DFE8DC4062144F030F0644A8E076396 /* Debug */,
-				98A4CE46FE4020509D76ECF7D2A5E703 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E91DBD6E828EAFFFECACD3AD3553751C /* Build configuration list for PBXNativeTarget "CardSlider" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CA16DDB58394C2F4663CBEE096CA97B2 /* Debug */,
-				522D505673FAE9E2C7D03FFBD99EBFD3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EA47B704FA4AF76E196C85543B24B7CE /* Build configuration list for PBXNativeTarget "Pods-FoodDB" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7BCDB8120BE42ADC1247555984AFE6F4 /* Debug */,
-				3EF891F8B0CE72843BD5B8CE9B4B47DB /* Release */,
+				DF48E8C104AFEC0E06D9D5AE02D6484E /* Debug */,
+				B69A8C60DFA8BB09986C80CE4653838A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

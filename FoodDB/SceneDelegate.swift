@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CardSlider
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window  = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene  =  windowScene
+        window?.overrideUserInterfaceStyle = .light
         let layout  = UICollectionViewFlowLayout()
      
         let vc = ContainerController()

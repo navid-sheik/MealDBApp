@@ -19,7 +19,7 @@ class CustomMenuBar  : UIView {
     
     let imageLogo  :  UIImageView =  {
         let imageView  = UIImageView()
-        imageView.image =  UIImage(named: "logo2")
+        imageView.image =  UIImage(named: "logoUpdate")
         imageView.contentMode  = .scaleToFill
         return imageView
         

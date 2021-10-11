@@ -14,7 +14,7 @@ class AboutUsController: UIViewController{
     var logo :  UIImageView  = {
         let imageView  = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image =   UIImage(named: "logo2")
+        imageView.image =   UIImage(named: "logoUpdate")
         return imageView
     }()
     
@@ -48,7 +48,7 @@ class AboutUsController: UIViewController{
     
     let mission : UILabel = {
         let label  = UILabel()
-        label.text = "Gourmex was born in 2021 with the purpose of unify all existing recipes in one place. The app comprise all type of recipes and ingredients  , giving the luxury of expand your knowledge in different cuisines. If you love cooking or look for ideas for your next meal, this is the perfect place for you."
+        label.text = "Cheesyy was born in 2021 with the purpose of unify all existing recipes in one place. The app comprise all type of recipes and ingredients  , giving the luxury of expand your knowledge in different cuisines. If you love cooking or look for ideas for your next meal, this is the perfect place for you."
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines =  0
         label.textAlignment  = .justified
